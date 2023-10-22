@@ -1,8 +1,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>prueba2</title>
-</head>
+<title>Nueva etiqueta</title>
+<title>Nueva etiqueta</title>
 <body>
 Telegram
  del comando awk en Linux y Unix

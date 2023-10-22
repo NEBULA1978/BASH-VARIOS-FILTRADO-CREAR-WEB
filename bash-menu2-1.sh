@@ -5,7 +5,7 @@ opciones=(
     "Mostrar directorio:|ls -lth"
     "Mostrar calendario:|cal"
     "Mostrar fecha de hoy:|date"
-    "Realizar acciones en archivos:|./menu2.sh" # Reemplaza "./menu2.sh" con la ruta correcta si es diferente.
+    "Realizar acciones en archivos:|./bash-menu-dinamico3-final4.sh" # Reemplaza "./menu2.sh" con la ruta correcta si es diferente.
     "Salir:|exit 0"
 )
 
