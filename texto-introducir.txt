@@ -1,9 +1,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>hola</title>
+    <title>Uso</title>
 </head>
 <body>
+Telegram
+ del comando awk en Linux y Unix
+Uso del comando AWK en Linux y UNIX con ejemplos
+Publicado porJoan Carles
+10 octubre, 2021
+2 comentariosen Uso del comando AWK en Linux y UNIX con ejemplos
 
 
 
