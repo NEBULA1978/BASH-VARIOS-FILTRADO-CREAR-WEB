@@ -1,0 +1,31 @@
+Saltar al contenido
+geekland Blog de Tecnología
+Contacto Indice El Autor Buscar
+Twitter
+ 
+Reddit
+ 
+RSS
+ 
+Telegram
+USo del comando awk en Linux y Unix
+Uso del comando AWK en Linux y UNIX con ejemplos
+Publicado porJoan Carles
+10 octubre, 2021
+2 comentariosen Uso del comando AWK en Linux y UNIX con ejemplos
+Home » Linux » Explicación y ejemplos de uso del comando awk
+
+<title>Nueva etiqueta</title>
+
+¿QUÉ NOS PERMITE REALIZAR EL COMANDO AWK?
+Los usos básicos que podemos dar al comando Awk son los siguientes:
+
+Buscar palabras y patrones de palabras y reemplazarlos por otras palabras y/o patrones.
+Hacer operaciones matemáticas.
+Procesar texto y mostrar las líneas y columnas que cumplen con determinadas condiciones.
+Etc.
+Nota: En términos generales el comando awk permite procesar y modificar el texto según nuestras necesidades.
+
+
+/////////////////////////7
+/////////////////////////7
