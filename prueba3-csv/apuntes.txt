@@ -1,0 +1,143 @@
+#!/usr/bin/env bash
+# -*- coding: utf-8 -*-
+
+# Derechos de autor (c) 2022 Lorenzo Carbonell <también conocido como atareao>
+
+# Se otorga permiso, de forma gratuita, a cualquier persona que obtenga una copia
+# de este software y los archivos de documentación asociados (el "Software"), para tratar
+# con el Software sin restricciones, incluyendo, sin limitación, los derechos
+# para usar, copiar, modificar, fusionar, publicar, distribuir, sublicenciar y / o vender
+# copias del Software, y para permitir a las personas a las que se les proporciona el Software
+# hacerlo, sujeto a las siguientes condiciones:
+
+# El aviso de derechos de autor anterior y este aviso de permiso deben incluirse en
+# todas las copias o partes sustanciales del Software.
+
+# EL SOFTWARE SE PROPORCIONA "TAL CUAL", SIN GARANTÍA DE NINGÚN TIPO, EXPRESA O
+# IMPLÍCITA, INCLUIDAS, PERO NO LIMITADAS A, LAS GARANTÍAS DE COMERCIABILIDAD,
+# IDONEIDAD PARA UN PROPÓSITO PARTICULAR Y NO INFRACCIÓN. EN NINGÚN CASO EL
+# AUTOR O TITULARES DE DERECHOS DE AUTOR SERÁN RESPONSABLES DE CUALQUIER RECLAMACIÓN, DAÑOS O
+# OTROS DERECHOS, YA SEA EN UNA ACCIÓN DE CONTRATO, AGRAVIO O DE OTRO MODO, DERIVADOS DE,
+# FUERA DE O EN CONEXIÓN CON EL SOFTWARE O EL USO O OTRO ASUNTO EN EL
+# SOFTWARE.
+
+# --- 👇 A continuación las pruebas unitarias que se desean realizar 👇 ---
+
+## Aquí las Aserciones
+
+# A continuación, las funciones de prueba que verifican diferentes aspectos del código.
+
+# Pruebas de igualdad
+testEquals(){
+    assertEquals "Iguales" 1 1
+}
+
+# Pruebas de desigualdad
+testNotEquals(){
+    assertNotEquals "Distintos" 1 2
+}
+
+# Pruebas de contenido
+testContains(){
+    assertContains "Contiene" "Esto contiene un 1" 1
+}
+
+# Pruebas de no contenido
+testNotContains(){
+    assertNotContains "No contiene" "Esto contiene un 2" 1
+}
+
+# Pruebas de nulidad
+testNull(){
+    assertNull "Nulo" ""
+}
+
+# Pruebas de no nulidad
+testNotNull(){
+    assertNotNull "No nulo" "nulo"
+}
+
+# Pruebas de verdad
+testTrue(){
+    assertTrue "Cierto" 0
+}
+
+# Otras pruebas de verdad
+testTrue2(){
+    assertTrue "Cierto" "${SHUNIT_TRUE}"
+}
+
+testTrue3(){
+    assertTrue "Cierto" "[[ 2 -eq 2 ]]"
+}
+
+testTrue4(){
+    assertTrue "Cierto" "[[ -d "${SCRIPT_DIR}/shunit2" ]]"
+}
+
+# Pruebas de falsedad
+testFalse(){
+    assertFalse "Falso" 1
+}
+
+# Prueba de fallo
+testFail(){
+    fail "Este test falla siempre"
+}
+
+# Prueba de fallo en desigualdad
+testFailNotEquals(){
+    failNotEquals "Este test falla siempre" 1 2
+}
+
+# Pruebas con saltos
+testSkippin(){
+    assertTrue "Cierto" 0
+    startSkipping
+    fail "Este falla pero no se ejecutará"
+    endSkipping
+    assertTrue "Este sí" 0
+}
+
+# Pruebas de funciones
+testSuma(){
+    result=$(suma 1 22)
+    assertEquals 23 "${result}"
+}
+
+testMultiplicacion(){
+    result=$(multiplicacion 2 22)
+    assertEquals 44 "${result}"
+}
+
+# Pruebas de API HTTP
+testApi301(){
+    result=$(curl -s -o /dev/null -w "%{http_code}" -X GET "https://httpbin.org/status/301" -H  "accept: text/plain")
+    assertEquals 301 "${result}"
+}
+
+testApi200(){
+    result=$(curl -s -o /dev/null -w "%{http_code}" -X DELETE "https://httpbin.org/status/200" -H  "accept: text/plain")
+    assertEquals 200 "${result}"
+}
+
+testSaludo(){
+    result=$(curl -s -X GET "https://httpbin.org/base64/SG9sYQo%3D" -H  "accept: text/html")
+    assertEquals "Hola" "${result}"
+}
+
+testUUID(){
+    curl -s -X GET "https://httpbin.org/uuid" | grep uuid > /dev/null
+    rs=$?
+    assertTrue "${rs}"
+}
+
+# --- 👇 Aquí los scripts con el código a probar 👇 ---
+# Directorio del script actual
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+oneTimeSetUp(){
+    source "${SCRIPT_DIR}/../src/sample.sh"
+}
+# --- 👇 la biblioteca que nos permite realizar las pruebas 👇 ---
+# Cargar shUnit2
+source "${SCRIPT_DIR}/shunit2/shunit2"
