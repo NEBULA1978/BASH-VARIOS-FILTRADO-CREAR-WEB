@@ -15,7 +15,7 @@ Publicado porJoan Carles
 2 comentariosen Uso del comando AWK en Linux y UNIX con ejemplos
 Home » Linux » Explicación y ejemplos de uso del comando awk
 
-Hace unas semanas vimos con bastante profundidad y con ejemplos el uso que podíamos dar a la utilidad Sed. Ahora ha llegado el momento de hacer lo mismo pero esta vez con el comando Awk. Como ya dije en su día, si queréis empezar a programar scripts es esencial tener un conocimiento básico de herramientas como sed, awk, grep, cut, etc.
+<title>Nueva etiqueta</title>
 
 ¿QUÉ NOS PERMITE REALIZAR EL COMANDO AWK?
 Los usos básicos que podemos dar al comando Awk son los siguientes:
