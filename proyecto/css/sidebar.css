@@ -1,0 +1,88 @@
+#sidebar ul{
+    margin: 0;
+    /* un poco de margen por el lateral */
+    padding: 0 60px;
+    list-style: none;
+    display: flex;
+    /* Hacemos en column */
+    flex-flow: column wrap;
+    align-items: flex-start;
+}
+/* Menu lateral izquierda */
+#sidebar ul li{
+    /* separacion entre menu sidebar lateral y las fotos */
+    margin: 5px;
+    /* Aumentamos texto */
+    font-size: 25px;
+    width: 100%;
+}
+/* Etiqueta enlace */
+#sidebar ul li a{
+    /* Para que ocupe todo y pueda estar en todas partes */
+    display: block;
+    /* Separamos textos */
+    padding: 15px;
+    color: black;
+    text-decoration: none;
+    /* Que sea suave */
+    transition: all 0.2s;
+}
+/* Que se vea verde y hover */
+#sidebar ul li a:hover, #sidebar ul li a.active{
+    color: var(--color-primary);
+    /* border-left: 5px solid var(--color-primary); */
+}
+
+
+@media only screen and (max-width: 600px) {
+    #sidebar ul li{
+        width: auto;
+    }
+    #sidebar ul{
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+    #sidebar ul li a:hover, #sidebar ul li a.active{
+        /* reseteamos para que solo ponga border-botton */
+        border: none;
+        border-bottom: 5px solid var(--color-primary);
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    #sidebar ul li{
+        width: auto;
+    }
+    #sidebar ul{
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+    #sidebar ul li a:hover, #sidebar ul li a.active{
+        border: none;
+        border-bottom: 5px solid var(--color-primary);
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #sidebar ul{
+        flex-flow: column wrap;
+        align-items: flex-start;
+    }
+    #sidebar ul li a:hover, #sidebar ul li a.active{
+        border: none;
+        border-left: 5px solid var(--color-primary);
+    }
+    
+}
+
+@media only screen and (min-width: 992px) {
+
+}
+
+@media only screen and (min-width: 1200px) {
+
+}
+
+@media only screen and (min-width: 1500px) {
+
+}

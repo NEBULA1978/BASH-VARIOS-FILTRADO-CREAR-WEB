@@ -1,0 +1,68 @@
+header{
+    display: flex;
+    /* Si tiene que bajar que baje que no se salga del div */
+    flex-flow: row wrap;
+    /* espacio entre ambos */
+    justify-content: space-between;
+    /* se alinee menu con el titulo h1 */
+    align-items: center;
+}
+
+header h1{
+    flex-grow: 1;
+    margin: 30px;
+    text-align: center;
+
+        flex-grow: 1;
+            /* :
+                Este estilo aplica una propiedad de flexibilidad al elemento <h1>. flex-grow se utiliza en combinación con Flexbox para especificar cuánto debe crecer un elemento en relación con otros elementos en el mismo contenedor. Un valor de 1 significa que el elemento se expandirá tanto como sea posible dentro del contenedor. margin: 30px;
+            :
+                Aquí, estás aplicando un margen de 30 píxeles a todos los lados del elemento <h1>. Esto significa que habrá un espacio de 30 píxeles alrededor del elemento. text-align: center;
+            : */
+                /* Este estilo se utiliza para centrar el texto dentro del elemento <h1>. Todo el contenido de texto dentro del elemento se alineará en el centro horizontalmente. */
+}
+
+header ul{
+    flex-grow: 1;
+    padding: 0;
+    margin: 20px;
+    /* Quitamos puntos negros */
+    list-style: none;
+    /* Hacemos la lista se vea uno al lado del otro derecha izquierda */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Editamos enlaces */
+header ul li a{
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    margin: 10px;
+    color: black;
+    transition: all 0.2s;
+}
+/* Clase active y hover */
+header ul li a:hover, header ul li a.active{
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-primary);
+}
+
+@media only screen and (min-width: 992px) {
+
+}
+
+@media only screen and (min-width: 1200px) {
+    header h1{
+        /* Se alinea a la izquierda */
+        text-align: left;
+    }
+    header ul{
+        /* Se alinea a la derecha */
+        justify-content: flex-end;
+    }
+}
+
+@media only screen and (min-width: 1500px) {
+
+}

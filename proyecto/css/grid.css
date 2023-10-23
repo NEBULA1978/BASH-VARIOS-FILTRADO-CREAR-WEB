@@ -1,0 +1,61 @@
+
+#container{
+    display: grid;
+    /* el header ocupa dos columnas */
+    grid-template-areas:    'header header'
+    /* Debajo dos columnas sidebar y fotos */
+                            'sidebar photos';
+}
+
+header{
+    /* El header toma las dos columnas */
+    grid-area: header;
+}
+
+#sidebar{
+    /* ocupa una columna */
+    grid-area: sidebar;
+}
+
+#photo-container{
+    /* ocupa una columna */
+    grid-area: photos;
+}
+
+/* Tamaño movil ocupan una fila debajo del otro */
+/* Cuando sea menor de 600px va a tener esta estructura */
+@media only screen and (max-width: 768px) {
+    #container{
+        grid-template-areas:    'header'
+                                'sidebar'
+                                'photos';
+    }
+}
+/* Cuando sea entre 600 y 768p tendra esta estructura */
+/* @media only screen and (min-width: 600px) {
+    #container{
+        grid-template-areas:    'header'
+                                'sidebar'
+                                'photos';
+    }
+} */
+
+@media only screen and (min-width: 768px) {
+    #container{
+        display: grid;
+        grid-template-areas:    'header header'
+                                'sidebar photos';
+    }
+}
+
+@media only screen and (min-width: 992px) {
+
+}
+
+@media only screen and (min-width: 1200px) {
+
+}
+
+@media only screen and (min-width: 1500px) {
+
+}

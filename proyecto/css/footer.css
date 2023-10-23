@@ -1,0 +1,17 @@
+footer{
+    position: fixed;
+    /* Que este alineado abajo */
+    bottom: 0;
+    /* Abajo pero a la derecha */
+    left: 0;
+    /* Que me ocupe todo el ancho de la pantalla */
+    width: 100%;
+    /* Que no se vean imagenes por detras */
+    background-color: white;
+    border-top: 1px solid #ccc;
+    /* 5 pixeles por arriba y por abjo y por los laterales cero */
+    padding: 5px 0;
+    /* Alineamos todo al centro */
+    text-align: center;
+}
+/* Minuto 25:14 */
