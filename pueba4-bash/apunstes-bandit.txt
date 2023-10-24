@@ -1,0 +1,1095 @@
+#!/bin/bash
+
+      echo "Para conectarme al nivel 0 : 3
+        Me pide contraseña: bandit0
+"
+        echo "Bandido Nivel 0 → Nivel 1
+Objetivo de nivel
+La contraseña para el siguiente nivel se almacena en un archivo llamado Léame ubicado en el directorio de inicio. Use esta contraseña para iniciar sesión en bandit1 usando SSH. Siempre que encuentre una contraseña para un nivel, use SSH (en el puerto 2220) para iniciar sesión en ese nivel y continuar el juego.
+
+Comandos que puedes necesitar para resolver este nivel
+ls , cd , gato , archivo , du , encontrar"
+        echo " cat readme y la contraseña:boJ9jbbUNNfktd78OOpsqOltutMc3MY1"
+        echo "cat /home/bandit1/- otr forma cat /home/bandit1/*"
+        cat "cat $(pwd)/-"
+        read foo
+        ;;
+    2)
+        echo "Bandido Nivel 1 → Nivel 2
+Objetivo de nivel
+La contraseña para el siguiente nivel se almacena en un archivo llamado - ubicado en el directorio de inicio
+
+Comandos que puedes necesitar para resolver este nivel
+ls , cd , gato , archivo , du , encontrar"
+        echo "cat ./-
+CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9 "
+        echo "============"
+        echo "Otra forma por ruta absoluta cat /home/bandit1/-"
+        echo "============"
+        echo "Otra forma por ruta absoluta cat /home/bandit1/*"
+        echo "============"
+        echo "Otra forma por output aplicado a nivel de sistema  cat $(pwd)/-"
+        echo "============"
+        echo "Otra forma por output aplicado a nivel de sistema  cat $(pwd)/*"
+        read foo
+        ;;
+       echo "Bandido Nivel 2 → Nivel 3
+Objetivo de nivel
+La contraseña para el siguiente nivel se almacena en un archivo llamado espacios en este nombre de archivo ubicado en el directorio de inicio
+
+Comandos que puedes necesitar para resolver este nivel
+ls , cd , gato , archivo , du , encontrar"
+        # Escapamos espacios
+        echo "cat spaces\ in\ this\ filename "
+        echo "cat cp* o con cat *ame o con cat *this"
+        echo " cat /home/bandit2/*"
+        echo "cat $(pwd)/* o con cat *"
+        echo "aBZ0W5EmUfAf7kHTQeOwd8bauFJ2lAiG"
+       echo "Ejer5 bandit3"
+        echo "
+Bandit Level 3 → Level 4
+Level Goal
+
+The password for the next level is stored in a hidden file in the inhere directory.
+Commands you may need to solve this level
+
+ls , cd , cat , file , du , find
+"
+        echo "bandit3@bandit:~$ ls
+inhere
+bandit3@bandit:~$ find .
+.
+./.profile
+./.bashrc
+./.bash_logout
+./inhere
+./inhere/.hidden
+bandit3@bandit:~$ cd inhere/ | cat ./inhere/.hidden 
+2EW7BBsr6aMMoJ2HjW067dm8EgX26xNe
+bandit3@bandit:~$ 
+"
+        echo " find . -type f:Para ver ficheros"
+        echo " find . -type f -printf '%f\t%p\t%u\t%g\t%m\n'| column -t:Para ver ficheros"
+        echo "find y xargs,me dice en que fichero seencuentra la palabra leaving"
+        echo "find -type f | xargs grep 'leaving'"
+
+
+# flags especiales como root
+# Para crear:
+# chattr +l -V file.txt
+# Para ver:
+# lsattr
+# Para eliminar:
+# chattr -l -V file.txt
+
+# En bandit 4:
+# Encuentrameel nombre del archivo file(y algo)
+# find . -name -file*
+
+# which file
+# Me dice que tipo de archivo es:
+# file helado.jpg
+# ┌──(nexxt㉿kali)-[~/Documentos/flag]
+# └─$ file
+# Usage: file [-bcCdEhikLlNnprsSvzZ0] [--apple] [--extension] [--mime-encoding]
+#             [--mime-type] [-e <testname>] [-F <separator>]  [-f <namefile>]
+#             [-m <magicfiles>] [-P <parameter=value>] [--exclude-quiet]
+#             <file> ...
+#        file -C [-m <magicfiles>]
+#        file [--help]
+                                                
+# ┌──(nexxt㉿kali)-[~/Documentos/flag]
+# └─$ echo $PATH
+# /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games
+                                                
+# ┌──(nexxt㉿kali)-[~/Documentos/flag]
+# └─$ 
+# ===================
+# Para ver en hexadecimal el archivo
+# hexeditor file.txt
+# ==================
+
+# file inhear/*
+# find . -name -file* | xargs file
+
+# SOLUCION En bandit 4
+# find . -name -file07 | xargs cat
+# O:
+# cat $(find . -name -file07)
+
+# ============
+# SOLUCION En bandit 5
+# find .
+# find -type f
+# Con size le ponemos 1033c para buscar bytes
+# Con la ! le decimos que no es ejecutable
+# find -type f -readable ! -executable -size 1033c | xargs cat
+
+# COMANDO sed
+# cat /etc/passwd | head -1
+# Solo cambia la 1º de la izquierda
+# cat /etc/passwd | head -1 sed 's/root/norrot/'
+# De forma global abajo /g
+# cat /etc/passwd | head -1 sed 's/root/norrot/g'
+# Para quitar la palabra root
+# cat /etc/passwd | head -1 sed 's/root/norrot//g'
+
+# Encontrar la palabra hola con sed en un archivo
+# cat /usr/shared/wordlist/rockyou.txt | grep "ĥola$"
+
+# Encontrar la linea de la palabra hola con sed en un archivo
+# cat /usr/shared/wordlist/rockyou.txt | grep "ĥola$" -n
+
+# Muestrame lo que hay en la linea x con awk
+# cat /usr/shared/wordlist/rockyou.txt | awk 'NR==18876'
+
+# SOLUCION bandit 5 a 6
+# Para quitar espacios adicionales:
+# find -type f -readable ! -executable -size 1033c | xargs cat | xargs
+
+# Me da error:
+# Con sed: para quitar los espacios:
+# find -type f -readable ! -executable -size 1033c | xargs cat | sed 's^* //'
+
+
+# ============
+# SOLUCION bandit 6 a 7
+# Asi me salen errores(abajo) permiso denegado
+# find / -user bandit7 -group bandit6 -size 33c
+# Quiero que los errores el stderr rediriga al dev null
+# find / -user bandit7 -group bandit6 -size 33c 2>/dev/null
+# ===============
+# SOLUCION 6 a 7
+# find / -user bandit7 -group bandit6 -size 33c 2>/dev/null | xargs cat
+# =================
+# Para ir a tomar por culo el equipo no hacer:
+# mv /* /dev/null
+# convertimos stder en stdin :
+# cat /etc/passwd 2>&1
+# Para abrir firefox por consola sin ver nada en consola y abrimos firefox en 2ºplano(si cerramos la consola se cierra)
+# firefox > /dev/null 2>&1 &
+# Para independizar un comando :
+# disown -a 
+# O:
+# disown
+# Podemos cerrar consola sin cerrar firefox
+# ===============
+# SOLUCION 6 a 7
+# find / -user bandit7 -group bandit6 -size 33c 2>/dev/null | xargs cat
+# =================
+# ===============
+# SOLUCION 7 a 8
+# ENUNCIADO
+# La contraseña esta en un archivo data.txt cerca de la palabra millio
+# Para ver el nº de lineas
+# cat data.txt | wc -C
+
+# SOLUCION 7 a 8
+# No tiene sentido dos comandos 
+# cat data.txt | grep "millionth"
+# Asi mejor que arriba tarda menos que awk
+# time grep "millionth" data.txt
+# SOLUCION 7 a 8
+# No tiene sentido dos comandos
+# Con awk
+# cat data.txt | awk '/millionth/'
+# Asi mejor que arriba
+# time awk '/millionth/' data.txt
+# Muestrame el argumento 2
+# SOLUCION 7 a 8
+# time awk '/millionth/' data.txt | awk '{print $2}'
+
+# COMANDO CUT
+# QUiero filtrar el primer campo a la izquierda
+# echo "Hola    que tal" | cut -d '' -f 1
+# QUiero filtrar el segundo campo empezando de izquierda(no vemos nada hay espacio)
+# echo "Hola    que tal" | cut -d '' -f 2
+# QUiero filtrar el segundo campo empezando de izquierda(no vemos nada hay espacio) con awk me da resultado que
+# echo "Hola    que tal" | awk '{print $2}'
+
+# QUiero filtrar el sexto campo empezando de izquierda( vemos que)
+# echo "Hola    que tal" | cut -d '' -f 6
+
+# COMANDO ESPECIAL AWK SOLUCION 7 a 8
+# awk '/millionth/' data.txt | awk 'NF{print $NF}'
+# COMANDO ESPECIAL AWK SOLUCION 7 a 8
+
+# Revertimos cadena con awk:
+# awk '/millionth/' data.txt | rev
+# Mostramos el primer argumento:
+# awk '/millionth/' data.txt | rev | awk '{print $1}'
+# Volvemos a revertir para ver normal
+# awk '/millionth/' data.txt | rev | awk '{print $1}'| rev
+# Ver lo que hay en la linea 37267 (solucion 7 a 8)
+# awk 'NR==37262' data.txt
+
+# =================
+# ============
+
+# ============
+# SOLUCION 8 a 9
+# El pasword se encuentra en el archivo data.txt y es la unica linea de texto que ocurre una unica vez
+# Ver el texto del fichero
+# cat data.txt
+# COntamos las lineas 
+# cat data.txt | wc -l
+# Ordenamos y mostramos la linea unica SOLUCION 8 a 9
+# cat data.txt | wc -l | sort
+# cat data.txt | wc -l | sort | uniq -u
+# SOLUCION BUENA
+bandit8@bandit:~$ cat data.txt |  sort | uniq -u
+EN632PlfYiZbn3PhVK3XOGSlNInNE00t
+bandit8@bandit:~$ 
+# La unica linea que no se repite es como un uniq -u:
+# whith unique
+
+# ============
+# ============
+# SOLUCION 9 a 10
+# Esta el passwor en data.txt y esta precedida de varios ===
+# Hacemos cat a data.txt no es legible
+# strings data.txt | grep "==="
+# Muestrame la ultima linea tiene 4:
+# strings data.txt | grep "===" | tail -n 1
+
+# ============
+
+# SOLUCION bandit 9  a 10
+# Escrimos lo mismo que arriba pero en la consola sin contador
+# strings data.txt | grep "===" | while read line; do echo "Hola: $line"; done 
+# Escrimos lo mismo que arriba pero en la consola con contador
+contador=1; strings data.txt | grep "===" | while read line; do echo "Linea $contador: $line"; let contador+=1; done | awk 'NR==4{print $NF}'
+
+# ///////////////////////////////////
+# ///////////////////////////////////
+
+
+# SOLUCION bandit 10  a 11
+
+# Decodificar una cadena en base64
+echo "Hola que tal" | base64
+
+# Decodificar
+echo "Hola que tal" | base64 | base64 -d
+# Quiero que me conviertas los espacios en saltos de linea con tr(uno debajo del otro)
+# Solo aplica en una linea
+echo "Hola que tal" | base64 | base64 -d | tr ' ' '\n'
+# Quiero que me conviertas los espacios en saltos de linea con sed
+echo "Hola que tal" | base64 | base64 -d | sed 's/ /\n/g'
+# Mostrar la primera linea
+┌──(nexxt㉿kali)-[~]
+└─$ cat /etc/passwd | head -n 1
+root:x:0:0:root:/root:/usr/bin/zsh
+                                                     
+# Quiero sustituir un caracter con tr la r por la g
+┌──(nexxt㉿kali)-[~]
+└─$ cat /etc/passwd | head -n 1 | head -n 1 | tr 'r' 'g'
+goot:x:0:0:goot:/goot:/usg/bin/zsh
+                                                     
+┌──(nexxt㉿kali)-[~]
+└─$ 
+
+# SOLUCION:
+bandit10@bandit:~$ cat data.txt | base64 -d
+The password is 6zPeziLdR2RKNdNYFNb6nVCKzphlXHBM
+bandit10@bandit:~$ 
+
+
+# ============================
+# SOLUCION bandit 11  a 12 somos bandit 11
+# La passwd se encuentra en archivo data.txt todas las letras de la a a la z han sido  rotadas 13posiciones
+# cat data.txt | tr '[G-ZA-Fg-za-f]' '[T-ZA-St-za-s]' | awk 'NF{print $NF}'
+
+# ============================
+# ============================
+# SOLUCION bandit 12  a 13 somos bandit 12
+# La passwd esta en data.txt la cual es un dunpeo en hexaecimal la cual ha sido comprimida muchas veces
+
+# Vemos en hexadecimal
+# cat data.txt
+# COPIAMOS Y TRAEMOS AL EQUIPO PARA EJECUTAR SCRIPT DE ABAJO
+
+# Para ver hexadecimal entendible revertimos
+# cat data.txt | xxd -r
+
+next@next-System:~$ echo 3132372e302e302e31096c6f63616c686f73740a3132372e302e312e31096e6578742d53797374656d0a0a232054686520666f6c6c6f77696e67206c696e65732061726520646573697261626c6520666f7220495076362063617061626c6520686f7374730a3a3a3120202020206970362d6c6f63616c686f7374206970362d6c6f6f706261636b0a666530303a3a30206970362d6c6f63616c6e65740a666630303a3a30206970362d6d636173747072656669780a666630323a3a31206970362d616c6c6e6f6465730a666630323a3a32206970362d616c6c726f75746572730a | xxd -ps -r
+127.0.0.1	localhost
+127.0.1.1	next-System
+
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+next@next-System:~$ 
+
+
+
+
+# Para pasar texto a hexadecimal
+# echo "Hola que tal" | xxd
+
+# Para ver texto de hexadecimal
+# echo "Hola que tal" | xxd -r
+
+# Para ver texto de hexadecimal y ver la parte hexadecimal sin ver el texto
+# echo "Hola que tal" | xxd -ps
+
+# Compactamos en una misma linea con xargs y con tr eliminamos los espacio
+next@next-System:~$ batcat /etc/hosts | xxd -ps | xargs | tr -d ' '
+3132372e302e302e31096c6f63616c686f73740a3132372e302e312e31096e6578742d53797374656d0a0a232054686520666f6c6c6f77696e67206c696e65732061726520646573697261626c6520666f7220495076362063617061626c6520686f7374730a3a3a3120202020206970362d6c6f63616c686f7374206970362d6c6f6f706261636b0a666530303a3a30206970362d6c6f63616c6e65740a666630303a3a30206970362d6d636173747072656669780a666630323a3a31206970362d616c6c6e6f6465730a666630323a3a32206970362d616c6c726f75746572730a
+next@next-System:~$ 
+
+
+OPERADOR AND:
+whoami && ls 
+bandit12@bandit:~$ whoami && ls 
+bandit12
+data.txt
+bandit12@bandit:~$
+
+whoami || ls 
+bandit12@bandit:~$ whoami || ls 
+bandit12
+bandit12@bandit:~$ 
+
+
+# Escript en BASH:
+
+#!/bin/bash
+
+function ctrl_c(){
+  echo -e "\n\n[!] Saliendo...\n"
+  exit 1
+}
+
+# Ctrl+C
+trap ctrl_c INT
+
+first_file_name="data.gz"
+decompressed_file_name="$(7z l data.gz | tail -n 3 | head -n 1 | awk 'NF{print $NF}')"
+
+7z x $first_file_name &>/dev/null
+
+while [ $decompressed_file_name ]; do
+  echo -e "\n[+] Nuevo archivo descomprimido: $decompressed_file_name"
+  7z x $decompressed_file_name &>/dev/null
+  decompressed_file_name="$(7z l $decompressed_file_name 2>/dev/null | tail -n 3 | head -n 1 | awk 'NF{print $NF}')"
+done
+
+#!/bin/bash
+
+# Define una función para manejar la señal SIGINT (Ctrl+C)
+function ctrl_c(){
+  echo -e "\n\n[!] Saliendo...\n"
+  exit 1
+}
+
+# Registra la función `ctrl_c` para manejar la señal SIGINT
+trap ctrl_c INT
+
+# Nombre del primer archivo a descomprimir
+first_file_name="data.gz"
+
+# Obtiene el nombre del archivo descomprimido a partir de la salida del comando `7z l`
+decompressed_file_name="$(7z l data.gz | tail -n 3 | head -n 1 | awk 'NF{print $NF}')"
+
+# Descomprime el primer archivo
+7z x $first_file_name &>/dev/null
+
+# Itera sobre los archivos descomprimidos
+while [ $decompressed_file_name ]; do
+  # Imprime el nombre del archivo descomprimido actual
+  echo -e "\n[+] Nuevo archivo descomprimido: $decompressed_file_name"
+
+  # Descomprime el archivo actual
+  7z x $decompressed_file_name &>/dev/null
+
+  # Obtiene el nombre del siguiente archivo descomprimido
+  decompressed_file_name="$(7z l $decompressed_file_name 2>/dev/null | tail -n 3 | head -n 1 | awk 'NF{print $NF}')"
+done
+
+# REDIRECCIONES ESPONGE:
+
+Creamos un archivo test:
+Abrimos con nano e introduciomos:
+ Hola esto es una prueba
+O asi tambien:
+  echo "Hola esto es una prueba" > test
+next@next-System:~/prueba-bandit12$ cat test 
+Hola esto es una prueba
+next@next-System:~/prueba-bandit12$ cat test | awk '{print $1}'
+Hola
+next@next-System:~/prueba-bandit12$ cat test | awk '{print $2}'
+esto
+next@next-System:~/prueba-bandit12$ cat test | awk '{print $3}'
+es
+
+next@next-System:~/prueba-bandit12$ cat test | awk '{print $3}' >> test
+next@next-System:~/prueba-bandit12$ cat test 
+Hola esto es una prueba
+es
+next@next-System:~/prueba-bandit12$
+
+Con tee nos crea un copia y nos almacena la data que le indicamos:
+
+next@next-System:~/prueba-bandit12$ echo "Hola esto es" | tee prueba 
+Hola esto es
+next@next-System:~/prueba-bandit12$ lsd
+ prueba   test
+next@next-System:~/prueba-bandit12$ cat prueba
+Hola esto es
+next@next-System:~/prueba-bandit12$ 
+
+Utilizamos sponge para guardar en mismo archivo:
+next@next-System:~/prueba-bandit12$ cat test | awk '{print $2}' | sponge test
+next@next-System:~/prueba-bandit12$ cat test
+esto
+
+next@next-System:~/prueba-bandit12$ 
+
+strings:
+si esta comprimido el archivo no lo detecta
+next@next-System:~/prueba-bandit12$ lsd
+ prueba   test
+next@next-System:~/prueba-bandit12$ strings prueba
+Hola esto es
+next@next-System:~/prueba-bandit12$ strings test
+esto
+next@next-System:~/prueba-bandit12$ 
+
+Instalo
+next@next-System:~/prueba-bandit12$ 
+sudo apt install ghex
+
+.gz descomprimo con gunzip
+
+DESCOMPRIMIDOR:
+
+Nos muestra que hay dentro sin descomprimir:
+7z l archivo
+
+Para descomprimir archivo:
+7z x archivo
+
+Con file:
+Vemos el tipo de archivo que tratamos
+file archivo
+
+Si escribo :
+file data5.bin
+cat !$ (hace referencia al archivo data5.bin)
+
+Para borrar por conjunto:
+rm { data5,data6}
+
+El codigo estado 1 no es exitoso.
+El codigo estado 0 es exitoso.
+
+Tres lineas de abajo a arriba:
+7z l data.gz | tail -n 3
+
+Tres lineas de abajo a arriba filtro ultim argumento:
+7z l data.gz | tail -n 3 | awk 'NF{print $NF}'
+
+#!/bin/bash
+
+# Define una función para manejar la señal SIGINT (Ctrl+C)
+function ctrl_c(){
+  echo -e "\n\n[!] Saliendo...\n"
+  exit 1
+}
+
+# Registra la función `ctrl_c` para manejar la señal SIGINT
+trap ctrl_c INT
+
+# Define el nombre del primer archivo a descomprimir
+first_file_name="data.gz"
+
+# Obtiene el nombre del archivo descomprimido a partir de la salida del comando `7z l`
+decompressed_file_name="$(7z l data.gz | tail -n 3 | head -n 1 | awk 'NF{print $NF}')"
+
+# Descomprime el primer archivo
+7z x $first_file_name &>/dev/null
+
+# Itera sobre los archivos descomprimidos
+while [ $decompressed_file_name ]; do
+  # Imprime el nombre del archivo descomprimido actual
+  echo -e "\n[+] Nuevo archivo descomprimido: $decompressed_file_name"
+
+  # Descomprime el archivo actual
+  7z x $decompressed_file_name &>/dev/null
+
+  # Obtiene el nombre del siguiente archivo descomprimido
+  decompressed_file_name="$(7z l $decompressed_file_name 2>/dev/null | tail -n 3 | head -n 1 | awk 'NF{print $NF}')"
+done
+
+
+
+
+
+# VOY POR 1H 21 DESCOMPRIMIENDO ARCHIVO hexadecimal CON SCRIPT
+# ============================
+
+Existen varias herramientas de recuperación de archivos que puedes utilizar, algunas son:
+
+    TestDisk: una herramienta gratuita y de código abierto que puede recuperar particiones dañadas y archivos eliminados en sistemas de archivos diferentes, incluyendo FAT, NTFS y ext.
+
+    PhotoRec: otra herramienta gratuita y de código abierto desarrollada por el mismo equipo que TestDisk. Aunque su nombre sugiere que está diseñada para recuperar fotos, en realidad puede recuperar una amplia variedad de archivos, incluyendo documentos de texto.
+
+Es importante que detengas cualquier escritura en el disco donde se encuentra el archivo eliminado hasta que hayas intentado recuperarlo, ya que cualquier escritura adicional puede sobrescribir los datos del archivo y hacer que sea irreparable.
+
+
+////////////////////////////////////////
+pasos por consola:
+
+next@next-System:~/prueba-bandit12$ lsd
+ data   descompresor.sh   prueba   test
+next@next-System:~/prueba-bandit12$ cat descompresor.sh 
+
+#!/bin/bash
+
+function ctrl_c(){
+  echo -e "\n\n[!] Saliendo...\n"
+  exit 1
+}
+
+# Ctrl+C
+trap ctrl_c INT
+
+first_file_name="data.gz"
+decompressed_file_name="$(7z l data.gz | tail -n 3 | head -n 1 | awk 'NF{print $NF}')"
+
+7z x $first_file_name &>/dev/null
+
+while [ $decompressed_file_name ]; do
+  echo -e "\n[+] Nuevo archivo descomprimido: $decompressed_file_name"
+  7z x $decompressed_file_name &>/dev/null
+  decompressed_file_name="$(7z l $decompressed_file_name 2>/dev/null | tail -n 3 | head -n 1 | awk 'NF{print $NF}')"
+done
+next@next-System:~/prueba-bandit12$ cat data | xxd -r
+#G���CF�=@6M@hA�22h91AY&SYSf�������n������󷭉}�g����k���;�{�;[A�1��
+4h2�hd0@�M4��z���i�&������?R24����4h� (#�"���Ϥ��qmn�D݋r`��\�h���سU��#0Ai]�j��P;�������!˖mj����c|&��~z�lT�hQH�d���q<���1�g��O� k���#M�D�=��G��x	
+�g~�(�҂�a�4
+           ��M����{LS4\��r��
+��Z��@���|C�s2ӄ��@N��ބ�Q�����F�01�6�L�Z�6��L$�KEk�!����8@������]T5��^�4ʨ<0�k]S/�� �?���fK�	��:�o���L�5�D}�$D��4
+�ܑN$٥�@C���4next@next-System:~/prueba-bandit12$ cat data | xxd -r | sponge data
+next@next-System:~/prueba-bandit12$ file data 
+data: gzip compressed data, was "data2.bin", last modified: Tue Feb 21 22:02:52 2023, max compression, from Unix, original size modulo 2^32 564
+next@next-System:~/prueba-bandit12$ strings data 
+data2.bin
+BZh91AY&SYSf
+hd0@
+?R24
+#0Ai]
+'[B0
+k]S/
+next@next-System:~/prueba-bandit12$ ghex data 
+next@next-System:~/prueba-bandit12$ mv data data.gz
+next@next-System:~/prueba-bandit12$ lsd
+ data.gz   descompresor.sh   prueba   test
+next@next-System:~/prueba-bandit12$ 7z l data.gz 
+
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=es_ES.UTF-8,Utf16=on,HugeFiles=on,64 bits,4 CPUs AMD Ryzen 3 3200G with Radeon Vega Graphics     (810F81),ASM,AES-NI)
+
+Scanning the drive for archives:
+1 file, 597 bytes (1 KiB)
+
+Listing archive: data.gz
+
+--
+Path = data.gz
+Type = gzip
+Headers Size = 20
+
+   Date      Time    Attr         Size   Compressed  Name
+------------------- ----- ------------ ------------  ------------------------
+2023-02-21 23:02:52 .....          564          597  data2.bin
+------------------- ----- ------------ ------------  ------------------------
+2023-02-21 23:02:52                564          597  1 files
+next@next-System:~/prueba-bandit12$ 7z x data.gz 
+
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=es_ES.UTF-8,Utf16=on,HugeFiles=on,64 bits,4 CPUs AMD Ryzen 3 3200G with Radeon Vega Graphics     (810F81),ASM,AES-NI)
+
+Scanning the drive for archives:
+1 file, 597 bytes (1 KiB)
+
+Extracting archive: data.gz
+--
+Path = data.gz
+Type = gzip
+Headers Size = 20
+
+Everything is Ok
+
+Size:       564
+Compressed: 597
+next@next-System:~/prueba-bandit12$ ls
+data2.bin  data.gz  descompresor.sh  prueba  test
+next@next-System:~/prueba-bandit12$ 7z l data2.bin
+
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=es_ES.UTF-8,Utf16=on,HugeFiles=on,64 bits,4 CPUs AMD Ryzen 3 3200G with Radeon Vega Graphics     (810F81),ASM,AES-NI)
+
+Scanning the drive for archives:
+1 file, 564 bytes (1 KiB)
+
+Listing archive: data2.bin
+
+--
+Path = data2.bin
+Type = bzip2
+
+   Date      Time    Attr         Size   Compressed  Name
+------------------- ----- ------------ ------------  ------------------------
+                    .....                            data2
+------------------- ----- ------------ ------------  ------------------------
+                                                564  1 files
+next@next-System:~/prueba-bandit12$ 7x x data2.bin
+7x: orden no encontrada
+next@next-System:~/prueba-bandit12$ 7z x data2.bin
+
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=es_ES.UTF-8,Utf16=on,HugeFiles=on,64 bits,4 CPUs AMD Ryzen 3 3200G with Radeon Vega Graphics     (810F81),ASM,AES-NI)
+
+Scanning the drive for archives:
+1 file, 564 bytes (1 KiB)
+
+Extracting archive: data2.bin
+--
+Path = data2.bin
+Type = bzip2
+
+Everything is Ok
+
+Size:       427
+Compressed: 564
+next@next-System:~/prueba-bandit12$ l
+data2  data2.bin  data.gz  descompresor.sh*  prueba  test
+next@next-System:~/prueba-bandit12$ ls
+data2  data2.bin  data.gz  descompresor.sh  prueba  test
+next@next-System:~/prueba-bandit12$ 7z x data2.bin
+
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=es_ES.UTF-8,Utf16=on,HugeFiles=on,64 bits,4 CPUs AMD Ryzen 3 3200G with Radeon Vega Graphics     (810F81),ASM,AES-NI)
+
+Scanning the drive for archives:
+1 file, 564 bytes (1 KiB)
+
+Extracting archive: data2.bin
+--
+Path = data2.bin
+Type = bzip2
+
+
+Would you like to replace the existing file:
+  Path:     ./data2
+  Size:     427 bytes (1 KiB)
+  Modified: 2023-02-21 23:02:52
+with the file from archive:
+  Path:     data2
+? (Y)es / (N)o / (A)lways / (S)kip all / A(u)to rename all / (Q)uit? q
+
+Archives with Errors: 1
+
+
+
+Break signaled
+next@next-System:~/prueba-bandit12$ lsd
+ data.gz   data2   data2.bin   descompresor.sh   prueba   test
+next@next-System:~/prueba-bandit12$ 7z l data2.bin
+
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=es_ES.UTF-8,Utf16=on,HugeFiles=on,64 bits,4 CPUs AMD Ryzen 3 3200G with Radeon Vega Graphics     (810F81),ASM,AES-NI)
+
+Scanning the drive for archives:
+1 file, 564 bytes (1 KiB)
+
+Listing archive: data2.bin
+
+--
+Path = data2.bin
+Type = bzip2
+
+   Date      Time    Attr         Size   Compressed  Name
+------------------- ----- ------------ ------------  ------------------------
+                    .....                            data2
+------------------- ----- ------------ ------------  ------------------------
+                                                564  1 files
+next@next-System:~/prueba-bandit12$ 7z x data2
+
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=es_ES.UTF-8,Utf16=on,HugeFiles=on,64 bits,4 CPUs AMD Ryzen 3 3200G with Radeon Vega Graphics     (810F81),ASM,AES-NI)
+
+Scanning the drive for archives:
+1 file, 427 bytes (1 KiB)
+
+Extracting archive: data2
+--
+Path = data2
+Type = gzip
+Headers Size = 20
+
+Everything is Ok
+
+Size:       20480
+Compressed: 427
+next@next-System:~/prueba-bandit12$ lsd
+ data.gz   data2   data2.bin   data4.bin   descompresor.sh   prueba   test
+next@next-System:~/prueba-bandit12$ 7z l data4.bin
+
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=es_ES.UTF-8,Utf16=on,HugeFiles=on,64 bits,4 CPUs AMD Ryzen 3 3200G with Radeon Vega Graphics     (810F81),ASM,AES-NI)
+
+Scanning the drive for archives:
+1 file, 20480 bytes (20 KiB)
+
+Listing archive: data4.bin
+
+--
+Path = data4.bin
+Type = tar
+Physical Size = 20480
+Headers Size = 10240
+Code Page = UTF-8
+
+   Date      Time    Attr         Size   Compressed  Name
+------------------- ----- ------------ ------------  ------------------------
+2023-02-21 23:02:52 .....        10240        10240  data5.bin
+------------------- ----- ------------ ------------  ------------------------
+2023-02-21 23:02:52              10240        10240  1 files
+next@next-System:~/prueba-bandit12$ 7z x data4.bin
+
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=es_ES.UTF-8,Utf16=on,HugeFiles=on,64 bits,4 CPUs AMD Ryzen 3 3200G with Radeon Vega Graphics     (810F81),ASM,AES-NI)
+
+Scanning the drive for archives:
+1 file, 20480 bytes (20 KiB)
+
+Extracting archive: data4.bin
+--
+Path = data4.bin
+Type = tar
+Physical Size = 20480
+Headers Size = 10240
+Code Page = UTF-8
+
+Everything is Ok
+
+Size:       10240
+Compressed: 20480
+next@next-System:~/prueba-bandit12$ lsd
+ data.gz   data2   data2.bin   data4.bin   data5.bin   descompresor.sh   prueba   test
+next@next-System:~/prueba-bandit12$ 7z l data5.bin
+
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=es_ES.UTF-8,Utf16=on,HugeFiles=on,64 bits,4 CPUs AMD Ryzen 3 3200G with Radeon Vega Graphics     (810F81),ASM,AES-NI)
+
+Scanning the drive for archives:
+1 file, 10240 bytes (10 KiB)
+
+Listing archive: data5.bin
+
+--
+Path = data5.bin
+Type = tar
+Physical Size = 10240
+Headers Size = 9728
+Code Page = UTF-8
+
+   Date      Time    Attr         Size   Compressed  Name
+------------------- ----- ------------ ------------  ------------------------
+2023-02-21 23:02:52 .....          216          512  data6.bin
+------------------- ----- ------------ ------------  ------------------------
+2023-02-21 23:02:52                216          512  1 files
+next@next-System:~/prueba-bandit12$ 7z x data5.bin
+
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=es_ES.UTF-8,Utf16=on,HugeFiles=on,64 bits,4 CPUs AMD Ryzen 3 3200G with Radeon Vega Graphics     (810F81),ASM,AES-NI)
+
+Scanning the drive for archives:
+1 file, 10240 bytes (10 KiB)
+
+Extracting archive: data5.bin
+--
+Path = data5.bin
+Type = tar
+Physical Size = 10240
+Headers Size = 9728
+Code Page = UTF-8
+
+Everything is Ok
+
+Size:       216
+Compressed: 10240
+next@next-System:~/prueba-bandit12$ ls
+data2  data2.bin  data4.bin  data5.bin  data6.bin  data.gz  descompresor.sh  prueba  test
+next@next-System:~/prueba-bandit12$ 7z l data6.bin
+
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=es_ES.UTF-8,Utf16=on,HugeFiles=on,64 bits,4 CPUs AMD Ryzen 3 3200G with Radeon Vega Graphics     (810F81),ASM,AES-NI)
+
+Scanning the drive for archives:
+1 file, 216 bytes (1 KiB)
+
+Listing archive: data6.bin
+
+--
+Path = data6.bin
+Type = bzip2
+
+   Date      Time    Attr         Size   Compressed  Name
+------------------- ----- ------------ ------------  ------------------------
+                    .....                            data6
+------------------- ----- ------------ ------------  ------------------------
+                                                216  1 files
+next@next-System:~/prueba-bandit12$ 7z x data6.bin
+
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=es_ES.UTF-8,Utf16=on,HugeFiles=on,64 bits,4 CPUs AMD Ryzen 3 3200G with Radeon Vega Graphics     (810F81),ASM,AES-NI)
+
+Scanning the drive for archives:
+1 file, 216 bytes (1 KiB)
+
+Extracting archive: data6.bin
+--
+Path = data6.bin
+Type = bzip2
+
+Everything is Ok
+
+Size:       10240
+Compressed: 216
+next@next-System:~/prueba-bandit12$ ls
+data2  data2.bin  data4.bin  data5.bin  data6  data6.bin  data.gz  descompresor.sh  prueba  test
+next@next-System:~/prueba-bandit12$ 7x l data6
+7x: orden no encontrada
+next@next-System:~/prueba-bandit12$ 7z l data6
+
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=es_ES.UTF-8,Utf16=on,HugeFiles=on,64 bits,4 CPUs AMD Ryzen 3 3200G with Radeon Vega Graphics     (810F81),ASM,AES-NI)
+
+Scanning the drive for archives:
+1 file, 10240 bytes (10 KiB)
+
+Listing archive: data6
+
+--
+Path = data6
+Type = tar
+Physical Size = 10240
+Headers Size = 9728
+Code Page = UTF-8
+
+   Date      Time    Attr         Size   Compressed  Name
+------------------- ----- ------------ ------------  ------------------------
+2023-02-21 23:02:52 .....           79          512  data8.bin
+------------------- ----- ------------ ------------  ------------------------
+2023-02-21 23:02:52                 79          512  1 files
+next@next-System:~/prueba-bandit12$ 7z x data6
+
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=es_ES.UTF-8,Utf16=on,HugeFiles=on,64 bits,4 CPUs AMD Ryzen 3 3200G with Radeon Vega Graphics     (810F81),ASM,AES-NI)
+
+Scanning the drive for archives:
+1 file, 10240 bytes (10 KiB)
+
+Extracting archive: data6
+--
+Path = data6
+Type = tar
+Physical Size = 10240
+Headers Size = 9728
+Code Page = UTF-8
+
+Everything is Ok
+
+Size:       79
+Compressed: 10240
+next@next-System:~/prueba-bandit12$ ls
+data2  data2.bin  data4.bin  data5.bin  data6  data6.bin  data8.bin  data.gz  descompresor.sh  prueba  test
+next@next-System:~/prueba-bandit12$ 7z l data8.bin
+
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=es_ES.UTF-8,Utf16=on,HugeFiles=on,64 bits,4 CPUs AMD Ryzen 3 3200G with Radeon Vega Graphics     (810F81),ASM,AES-NI)
+
+Scanning the drive for archives:
+1 file, 79 bytes (1 KiB)
+
+Listing archive: data8.bin
+
+--
+Path = data8.bin
+Type = gzip
+Headers Size = 20
+
+   Date      Time    Attr         Size   Compressed  Name
+------------------- ----- ------------ ------------  ------------------------
+2023-02-21 23:02:52 .....           49           79  data9.bin
+------------------- ----- ------------ ------------  ------------------------
+2023-02-21 23:02:52                 49           79  1 files
+next@next-System:~/prueba-bandit12$ 7z z data8.bin
+
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=es_ES.UTF-8,Utf16=on,HugeFiles=on,64 bits,4 CPUs AMD Ryzen 3 3200G with Radeon Vega Graphics     (810F81),ASM,AES-NI)
+
+
+
+Command Line Error:
+Unsupported command:
+z
+next@next-System:~/prueba-bandit12$ 7z x data8.bin
+
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=es_ES.UTF-8,Utf16=on,HugeFiles=on,64 bits,4 CPUs AMD Ryzen 3 3200G with Radeon Vega Graphics     (810F81),ASM,AES-NI)
+
+Scanning the drive for archives:
+1 file, 79 bytes (1 KiB)
+
+Extracting archive: data8.bin
+--
+Path = data8.bin
+Type = gzip
+Headers Size = 20
+
+Everything is Ok
+
+Size:       49
+Compressed: 79
+next@next-System:~/prueba-bandit12$ lsd
+ data.gz   data2   data2.bin   data4.bin   data5.bin   data6   data6.bin   data8.bin   data9.bin   descompresor.sh   prueba   test
+next@next-System:~/prueba-bandit12$ cat data9.bin
+The password is wbWdlBxEir4CaE8LaPhauuOo6pwRmrDw
+next@next-System:~/prueba-bandit12$ file data9.bin 
+data9.bin: ASCII text
+next@next-System:~/prueba-bandit12$ batcat !$
+batcat data9.bin
+───────┬────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+       │ File: data9.bin
+───────┼────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+   1   │ The password is wbWdlBxEir4CaE8LaPhauuOo6pwRmrDw
+───────┴──────────────────────────────────────────────────────
+next@next-System:~/prueba-bandit12$ cat descompresor.sh
+
+#!/bin/bash
+
+function ctrl_c(){
+  echo -e "\n\n[!] Saliendo...\n"
+  exit 1
+}
+
+# Ctrl+C
+trap ctrl_c INT
+
+first_file_name="data.gz"
+decompressed_file_name="$(7z l data.gz | tail -n 3 | head -n 1 | awk 'NF{print $NF}')"
+
+7z x $first_file_name &>/dev/null
+
+while [ $decompressed_file_name ]; do
+  echo -e "\n[+] Nuevo archivo descomprimido: $decompressed_file_name"
+  7z x $decompressed_file_name &>/dev/null
+  decompressed_file_name="$(7z l $decompressed_file_name 2>/dev/null | tail -n 3 | head -n 1 | awk 'NF{print $NF}')"
+done
+next@next-System:~/prueba-bandit12$ lsd
+ data.gz     data4.bin   data6.bin   descompresor.sh
+ data2       data5.bin   data8.bin   prueba
+ data2.bin   data6       data9.bin   test
+next@next-System:~/prueba-bandit12$ rm *.bin
+next@next-System:~/prueba-bandit12$ lsd
+ data.gz   data2   data6   descompresor.sh   prueba   test
+next@next-System:~/prueba-bandit12$ rm data2 data6
+next@next-System:~/prueba-bandit12$ ls
+data.gz  descompresor.sh  prueba  test
+next@next-System:~/prueba-bandit12$ ./descompresor.sh
+
+[+] Nuevo archivo descomprimido: data2.bin
+
+[+] Nuevo archivo descomprimido: data2
+
+[+] Nuevo archivo descomprimido: data4.bin
+
+[+] Nuevo archivo descomprimido: data5.bin
+
+[+] Nuevo archivo descomprimido: data6.bin
+
+[+] Nuevo archivo descomprimido: data6
+
+[+] Nuevo archivo descomprimido: data8.bin
+
+[+] Nuevo archivo descomprimido: data9.bin
+next@next-System:~/prueba-bandit12$ lsd
+ data.gz     data4.bin   data6.bin   descompresor.sh
+ data2       data5.bin   data8.bin   prueba
+ data2.bin   data6       data9.bin   test
+next@next-System:~/prueba-bandit12$ cat data9.bin
+The password is wbWdlBxEir4CaE8LaPhauuOo6pwRmrDw
+next@next-System:~/prueba-bandit12$ 
+
+////////////////////////////////////////
+
+
+# CONTRASEÑA BANDIT 13 encontrada en bandit12
+wbWdlBxEir4CaE8LaPhauuOo6pwRmrDw
+
+
+
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+
+BANDIT 13 a BANDIT 14
+
+Probando push
+
+Level Goal
+
+The password for the next level is stored in the file data.txt, which is a hexdump of a file that has been repeatedly compressed. For this level it may be useful to create a directory under /tmp in which you can work using mkdir. For example: mkdir /tmp/myname123. Then copy the datafile using cp, and rename it using mv (read the manpages!)
+
+Objetivo de nivel
+
+La contraseña para el siguiente nivel está almacenada en el archivo data.txt, el cual es un volcado hexadecimal de un archivo que ha sido comprimido repetidamente. Para este nivel, puede ser útil crear un directorio en /tmp en el que puedas trabajar usando mkdir. Por ejemplo: mkdir /tmp/mi_nombre123. Luego, copia el archivo de datos usando cp y renómbralo usando mv (¡lee las páginas del manual!)
+
+# Crea un directorio en /tmp y accede a él
+mkdir /tmp/mi_nombre123
+cd /tmp/mi_nombre123
+
+# Copia el archivo data.txt al directorio actual
+cp /path/to/data.txt .
+
+# Renombra el archivo a un nombre más legible
+mv data.txt archivo_comprimido
+
+# Descomprime el archivo usando el comando xxd y redirige la salida a un archivo temporal
+xxd -r archivo_comprimido > archivo_temporal
+
+# Usa el comando file para identificar el tipo de archivo
+tipo_archivo=$(file archivo_temporal)
+
+# Mientras el tipo de archivo no sea "ASCII text", sigue descomprimiendo el archivo
+while [[ "$tipo_archivo" != *"ASCII text"* ]]
+do
+    mv archivo_temporal archivo_anterior
+    tipo_compresion=$(echo "$tipo_archivo" | cut -d " " -f 2)
+    if [[ "$tipo_compresion" == "gzip" ]]; then
+        # Descomprime el archivo usando gzip
+        gzip -d archivo_anterior
+    elif [[ "$tipo_compresion" == "bzip2" ]]; then
+        # Descomprime el archivo usando bzip2
+        bzip2 -d archivo_anterior
+    elif [[ "$tipo_compresion" == "xz" ]]; then
+        # Descomprime el archivo usando xz
+        xz -d archivo_anterior
+    fi
+    tipo_archivo=$(file archivo_anterior)
+done
+
+# El archivo resultante es el archivo de texto plano que contiene la contraseña
+cat archivo_anterior
+
+Este código crea un directorio temporal en /tmp, copia el archivo data.txt al directorio temporal y lo renombra a un nombre más legible. Luego, utiliza el comando xxd para descomprimir el archivo hexadecimal y redirige la salida a un archivo temporal. A continuación, utiliza el comando file para identificar el tipo de archivo y descomprime el archivo usando gzip, bzip2 o xz según el tipo de compresión. Este proceso se repite hasta que el tipo de archivo es "ASCII text", lo que significa que el archivo ha sido descomprimido completamente. Finalmente, se muestra el contenido del archivo resultante, que es la contraseña.
+
+
