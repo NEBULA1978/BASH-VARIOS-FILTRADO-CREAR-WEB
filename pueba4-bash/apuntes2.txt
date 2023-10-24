@@ -1,0 +1,319 @@
+PARA INICIAR PROGRAMA POR CONSOLA:
+
+
+next@next-System:~/Música/BUSCADOR-SV$-ULTIMO-BUENO/video4-buscador-sv4/Video4$ ./html-machines.github34-arreglando.sh -y "Epsilon"
+youtubeLink: name: Epsilon
+ip: 10.10.11.134
+so: Linux
+dificultad: Media
+next@next-System:~/Música/BUSCADOR-SV$-ULTIMO-BUENO/video4-buscador-sv4/Video4$ ./html-machines.github34-arreglando.sh -i 10.10.11.134
+
+        i) [*] La IP es 10.10.11.134
+
+
+        [*]) [*] La maquina correspondiente para la IP 10.10.11.134 es Epsilon
+
+next@next-System:~/Música/BUSCADOR-SV$-ULTIMO-BUENO/video4-buscador-sv4/Video4$ ./html-machines.github34-arreglando.sh -y "Epsilon"
+youtubeLink: https://www.youtube.com/watch?v=tMsK6ZiB7CQ
+
+next@next-System:~/Música/BUSCADOR-SV$-ULTIMO-BUENO/video4-buscador-sv4/Video4$ ./html-machines.github34-arreglando.sh -i 10.10.11.134
+
+        i) [*] La IP es 10.10.11.134
+
+
+        [*]) [*] La maquina correspondiente para la IP 10.10.11.134 es Epsilon
+
+next@next-System:~/Música/BUSCADOR-SV$-ULTIMO-BUENO/video4-buscador-sv4/Video4$ ./html-machines.github34-arreglando.sh -y "Epsilon"
+
+[!] El tutorial para esta maquina esta en este enlace: https://www.youtube.com/watch?v=tMsK6ZiB7CQ
+
+///////////////////////////////
+EJECUTAR enlace dese consola sin pulsar
+
+sudo apt-get install xdg-utils
+
+sudo apt install xdotool
+
+////////////////////////////////////////
+Para ejecuar desde consola -i busca por ip -y con nombre de maquina abre el video de  you tube
+-m ver propiedades del nombre de maquina
+
+next@next-System:~/Música/BUSCADOR-SV$-ULTIMO-BUENO/video4-buscador-sv4/Video4$ ./html-machines.github34-arreglando.sh -i 10.10.11.134
+
+        i) [*] La IP es 10.10.11.134
+
+
+        [*]) [*] La maquina correspondiente para la IP 10.10.11.134 es Epsilon
+
+next@next-System:~/Música/BUSCADOR-SV$-ULTIMO-BUENO/video4-buscador-sv4/Video4$ ./html-machines.github34-arreglando.sh -y "Epsilon"
+Se está abriendo en una sesión de navegador existente.
+
+[!] El tutorial para esta maquina esta en este enlace: https://www.youtube.com/watch?v=tMsK6ZiB7CQ
+
+next@next-System:~/Música/BUSCADOR-SV$-ULTIMO-BUENO/video4-buscador-sv4/Video4$ 
+
+next@next-System:~/Música/BUSCADOR-SV$-ULTIMO-BUENO/video4-buscador-sv4/Video4$ ./html-machines.github34-arreglando.sh -m "Epsilon" 
+        u) [*] Listando las propiedades de la maquina Epsilon:
+
+name: Epsilon
+ip: 10.10.11.134
+so: Linux
+dificultad: Media
+skills: Git Source Leak Exploit (GitHack) AWS Enumeration Lambda Function Enumeration Authentication Bypass Abusing JWT Server Side Template Injection (SSTI) Tar Symlink Exploitation
+like: eWPT eWPTXv2 OSCP OSWE
+youtube: https://www.youtube.com/watch?v=tMsK6ZiB7CQ
+next@next-System:~/Música/BUSCADOR-SV$-ULTIMO-BUENO/video4-buscador-sv4/Video4$ 
+
+
+next@next-System:~/Música/BUSCADOR-SV$-ULTIMO-BUENO/video4-buscador-sv4/Video4$ ./html-machines.github34-arreglando.sh -o Linux
+
+[!] Mostrando las maquina cuyo sistema operativo es Linux
+
+Tentacle        Scavenger       Haystack        Toby            CrimeStoppers   Tenten          Haircut         Retired         Doctor
+Validation      Enterprise      Passage         Backdoor        Nightmare       Union           Lazy            BountyHunter    Frolic
+Mischief        Chaos           Altered         Unobtainium     Pandora         Paper           Charon          Unbalanced      Jewel
+Reddish         SteamCloud      Shibboleth      Cache           Safe            Dab             Feline          Lame            Laboratory
+Horizontall     Seal            Ellingson       Sense           RedCross        Fulcrum         Catch           Valentine       Blocky
+Pressed         Antique         Quick           Ariekei         TartarSauce     Player          DevOops         Talkative       Joker
+Epsilon         Stratosphere    Traverxec       Forge           Cronos          Phoenix         Late            SolidState      Delivery
+Pit             Devzat          Sink            SwagShop        AdmirerToo      Inception       Obscurity       Wall            Poison
+EarlyAccess     Ransom          Overflow        BackendTwo      Admirer         Europa          Node            FluxCapacitor   Nibbles
+Flustered       Tenet           Tabby           Unicode         Time            Teacher         Shrek           Zetta           OpenSource
+NodeBlog        Stacked         Backend         Postman         Nineveh         Falafel         Apocalyst       Noter
+NunChucks       TheNotebook     October         Schooled        Fortune         Undetected      Waldo           ScriptKiddie
+Bolt            Travel          Holiday         Oz              Timing          RouterSpace     OverGraph       Beep
+GoodGames       Shocker         Blunder         CTF             Writer          Oouch           Brainfuck       Mango
+Hawk            SneakyMailer    Static          Kotarak         Meta            Celestial       Flujab          Bank
+Monitors        Secret          Aragog          CrossFit        Jail            Book            Knife           Luke
+next@next-System:~/Música/BUSCADOR-SV$-ULTIMO-BUENO/video4-buscador-sv4/Video4$ ./html-machines.github34-arreglando.sh -o Windows
+
+[!] Mostrando las maquina cuyo sistema operativo es Windows
+
+Return          Sizzle          Giddy           Search          Reel            Bart            RE              TimeLapse       StreamIO
+Jeeves          Toolbox         Tally           MultiMaster     Jerry           Conceal         Granny          Legacy          Active
+Blackfield      Hancliffe       Fighter         ServMon         SecNotes        Arctic          Anubis          Devel           Atom
+Love            Object          Hackback        Buff            Chatterbox      Resolute        Grandpa         Forest          Netmon
+Intelligence    Helpline        Querier         Bastard         Monteverde      Acute           Silo            Json            Cascade
+Driver          Bankrobber      Control         Bounty          Optimum         Sauna           Heist           Sniper          Scrambled
+Minion          Mantis          Breadcrumbs     Curling         Worker          Blue            APT             Reel2           Remote
+next@next-System:~/Música/BUSCADOR-SV$-ULTIMO-BUENO/video4-buscador-sv4/Video4$ 
+
+
+next@next-System:~/Imágenes/video4-buscador-sv4-main$ ./html-machines.github34-arreglando.sh -d Insane -o Windows
+
+[!] Se va a plicar una busqueda por la dificultad Insane y los sitemas operativos que sean Windows 
+
+Minion          Sizzle          Bankrobber      Fighter         Hackback        MultiMaster     Anubis          APT
+next@next-System:~/Imágenes/video4-buscador-sv4-main$ ./html-machines.github34-arreglando.sh -d Insane -o Linux
+
+[!] Se va a plicar una busqueda por la dificultad Insane y los sitemas operativos que sean Linux 
+
+Reddish         Sink            Ariekei         CrossFit        Fortune         Fulcrum
+Stacked         Toby            CTF             Nightmare       Jail            Brainfuck
+next@next-System:~/Imágenes/video4-buscador-sv4-main$ 
+
+////////////////////////////////////////////////
+
+PARA buscar por parametro s skill
+next@next-System:~/Imágenes/video4-buscador-sv4-main$ ./html-machines.github34--final.sh -s "Active Directory"
+
+[!]Se va a buscar por la slill Active Directory{endColour}
+
+next@next-System:~/Imágenes/video4-buscador-sv4-main$ 
+
+next@next-System:~/Imágenes/video4-buscador-sv4-main$ ./html-machines.github34--final.sh -s "Active Directory dfdfdf dfdffd dfdfdf dfdf df"
+
+[!]Se va a buscar por la slill Active Directory dfdfdf dfdffd dfdfdf dfdf df{endColour}
+
+next@next-System:~/Imágenes/video4-buscador-sv4-main$ 
+
+///////////////////////////////////////////////
+
+Pasos ultimo video para filtrar skilss:
+ cat bundle.js | grep "skills: "
+ cat bundle.js | grep "skills: " -B 6
+ cat bundle.js | grep "skills: " -B 6 | grep "sqli" -i(convertimos mayus y minusculas)
+ 
+next@next-System:~/Imágenes/video4-buscador-sv4-main$ cat bundle.js | grep "skills: " -B 6 | grep "sqli" -i
+            skills: "SQLI (Error Based) SQLI -> RCE (INTO OUTFILE) Information Leakage",
+            skills: "XSS Injection XSS Cookie Stealing Cookie Hijacking Code Analysis Building a Key Generator (PYTHON) SQLI (Error Based) LFI && Wrappers Bash Scripting for Host Discovering Information Leakage Pivoting Abusing Docker Abusing Capabilities",
+            skills: "SQLI (Error Based) Hash Cracking Weak Algorithms Password Reuse Server Side Template Injection (SSTI) Docker Breakout (Privilege Escalation) [PIVOTING]",
+            skills: "Domain Zone Transfer (AXFR) SQLI (Error Based) [WHOIS] PCAP Analysis (Tshark && Wireshark) Abusing Rootkit",
+            skills: "WordPress Lcars Plugin SQLI Vulnerability SQL Injection (boolean-based blind, error-based, time-based blind) WordPress Exploitation [www-data] (Theme Edition - 404.php Template) Joomla Exploitation [www-data] (Template Manipulation) Docker Breakout Ghidra Binary Analysis Buffer Overflow (No ASLR - PIE enabled) [RET2LIBC] (Privilege Escalation)",
+            skills: "Blind XSS Injection Stealing the session cookie by XSS injection SQLI - Error Based SQLI - File Access SQLI - Stealing Net-NTLMv2 Hash (impacket-smbserver) XSS + XSRF => RCE Abusing a custom binary (Brute Force Pin && Overflow)",
+            skills: "Brute Force Pin / Rate-Limit Bypass [Headers] Type Juggling Bypassing SQL Injection (Error Based) SQLI to RCE -> INTO OUTFILE Query Dirty Pipe Exploit (But with PAM-Wordle configured)",
+            skills: "SQL Injection - Sqlite XSS Injection - Bypassing Techniques (fromCharCode) + Own Javascript Code + Session Cookie Theft Abusing existing parameters - RCE NodeJS npm - Privilege Escalation",
+            skills: "SQL Injection [SQLI] - Error Based Advanced Bash Scripting (EXTRA) SQLI to RCE (Into Outfile - PHP File Creation) ConPtyShell (Fully Interactive Reverse Shell for Windows) Playing with ScriptBlocks and PSCredential to execute commands as another user AppLocker Bypass WinPEAS Enumeration Service ImagePath Hijacking (Privilege Escalation)",
+            skills: "Information Leakage (Code Inspection) Abusing OpenEMR Broken Access Control Authentication Bypassing (Abusing the registration panel) SQL Injection - Error Based [SQLI] OpenEMR Authentication Exploit (RCE) Abusing Docker Group (Privilege Escalation)",
+            skills: "Local File Inclusion (LFI) [Abusing file_get_contents] Abusing No Redirect Forge PHPSESSID and getting valid Cookies Forge JWT Uploading WebShell Obtaining system credentials through the webshell Abusing Sticky Notes Binary Analysis (Radare2) SQL Injection (SQLI) [Error Based] AES Decrypt (Cyberchief)",
+            skills: "SQLI (SQL Injection) - Unicode Injection WAF Bypassing Advanced Python Scripting - Creation of an automation tool to handle Unicode in SQL injection Database enumeration through the previously created utility Cracking Passwords Active Directory Enumeration Enumerating domain information through SQL injection Obtaining domain RIDs through SQL injection Applying brute-force attack  (SID = SID+RID) to obtain existing domain users [Python Scripting] SMB Brute Force Attack (Crackmapexec) Enumerating AD existing users (rpcclient/rpcenum) Abusing Remote Management User group Microsoft Visual Studio 10.0 Exploitation (User Pivoting) Using libwebsockets in order to connect to a CEF Debugger (RCE) AMSI Bypass - Playing with Nishang AMSI Bypass - Bypass-4MSI Alternative (evil-winrm) DLL Inspection - Information Leakage BloodHound Enumeration Abusing the GenericWrite privilege on a user Making a user vulnerable to an ASREPRoast attack - Disabling Kerberos Pre-Authentication Requesting the TGT of the manipulated user Abusing Server Operators Group Abusing an existing service by manipulating its binPATH We change the password of the administrator user after restarting the manipulated service",
+            skills: "SQL Injection (SQLI) Server Side Template Injection (SSTI) (RCE) Abusing Knockd Network enumeration techniques using bash oneliners PIVOTING Portainer 1.11.1 Exploitation - Resetting the admin password Creating a new container from Portainer (Privilege Escalation)",
+            skills: "HTML Injection XSS Injection SQL Injection (SQLI) - Error Based OpenSSH <= 6.6 SFTP misconfiguration universal exploit (RCE) Script Modification Binary Analysis [GHIDRA/Radare2] In-depth analysis with Radare2 [Tips and tricks] Command Injection - User Pivoting Ubuntu Xenial Privilege Escalation - Kernel Exploitation",
+            skills: "Domain Zone Transfer (AXFR) SQLI (Blind Time Based) - Creating a custom Python script Command Injection Abusing Cron Job [Privilege Escalation]",
+            skills: "RPC Enum SQLi Bypass Login + SQL Injection [Database Enumeration] SQLi - File System Enumeration (Abusing load_file) Python Code Analysis Command Injection Cracking Hashes Postfix Enumeration Abusing Cron Job [User Pivoting] Abusing apt config files [Privilege Escalation]",
+            skills: "SQLI (SQL Injection) - UNION Injection SQLI - Read Files HTTP Header Command Injection - X-FORWARDED-FOR [RCE] Abusing sudoers privilege [Privilege Escalation]",
+            skills: "Asgaros Forum Exploitation - Unauthenticated Blind Time Based SQL Injection (SQLI) Download From Files 1.48 - Arbitrary File Upload (WordPress Plugin Exploitation) Cracking Hashes Abusing PAM configuration for the Secure Shell service (SSH) Abusing Cron Job (Rsync Exploitation) [Privilege Escalation]",
+            skills: "SSL Certificate Inspection Login Bypass - SQLI SQLI (Blind Time Based) [Python Scripting] Abusing preg_replace (REGEX Danger) [RCE] Creating an AutoPwn script for Intrusion [Python Scripting] Abusing Cron Job [Privilege Escalation]",
+            skills: "Information Leakage SQL Injection (SQLI) - Abusing substring function Obaining user passwords [Python Scripting] PHP Type Juggling Exploitation (0e hash collision) Abusing File Upload - File name truncation (Bordering the limits) Abusing video group - Taking a screenshot to view a password [GIMP && Playing with virtual_size] Abusing disk group to read the flag [debugfs] [Privilege Escalation]",
+            skills: "SQLI (SQL Injection) - Union Injection SQLI - WAF Bypass Cracking Hashes Uploading a file abusing a hidden property Filtering Bypass Abusing RSA - Creating a private key based on a public one Decrypting a message with the generated private key Abusing SUID Binary [Privilege Escalation]",
+            skills: "APK Analysis (apktool, d2j-dex2jar) JD-GUI - Code Inspection Information Leakage - Visible Token values Cachet Framework Exploitation - SQLI Let's Chat Exploitation - Abusing API (Reading Private Messages) Cachet Framework Exploitation - Server Side Template Injection (SSTI) [RCE] Abusing Cron Job [Privilege Escalation]",
+            skills: "SSL Cert Enumeration Cookies Manipulation - Gaining access to restricted areas of the site Abusing Mailer Configuration Mail server hijacking - Intercepting mails with Python SQLI (SQL Injection) - Error based in registered patient cancelation form Gaining access as the 'sysadm' user to an Ajenti panel Ajenti Server Management System Exploitation Ajenti Exploitation - Creating an authorized public key on the server Assigning file permissions through the API Managing authorized access through the 'hosts.allow' file Escaping Restricted Bash (rbash) Abusing SUID Binary (GNU Screen) [Privilege Escalation]",
+            skills: "RPC Enumeration User Enumeration via Kerberos - Kerbrute ASREPRoast Attack - GetNPUsers.py (Failed) LDAP Enumeration - ldapsearch && ldapdomaindump SMB Enumeration - smbclient && smbmap Cracking TightVNC Password - vncpwd Kerberoasting Attack - GetUserSPNs.py (Failed) Abusing WinRM - EvilWinRM Enumerating SQLite3 Database File Analysis of Windows EXE binary Installing DotPeek on a Windows virtual machine Reverse engineering the CBC cipher - Obtaining clear text passwords Abusing AD Recycle Bin Group - Active Directory Object Recovery (Get-ADObject) [Privilege Escalation] EXTRA: Chisel Remote Port Forwarding (RDP + Remmina)",
+next@next-System:~/Imágenes/video4-buscador-sv4-main$ cat bundle.js | grep "skills: " -B 6 | grep "sqli" -i
+
+
+ cat bundle.js | grep "skills: " -B 6 | grep "sQlI" -i
+
+VEMOS LOS NOMBRES:
+
+ next@next-System:~/Imágenes/video4-buscador-sv4-main$ cat bundle.js | grep "skills: " -B 6 | grep "sQlI" -i -B 6 | grep "name: "
+            name: "Validation",
+            name: "EarlyAccess",
+            name: "GoodGames",
+            name: "Scavenger",
+            name: "Enterprise",
+            name: "Bankrobber",
+            name: "Altered",
+            name: "Holiday",
+            name: "Control",
+            name: "Cache",
+            name: "Breadcrumbs",
+            name: "MultiMaster",
+            name: "Oz",
+            name: "Nightmare",
+            name: "Cronos",
+            name: "Writer",
+            name: "Union",
+            name: "Phoenix",
+            name: "Europa",
+            name: "Falafel",
+            name: "Charon",
+            name: "Catch",
+            name: "Flujab",
+            name: "Cascade",
+next@next-System:~/Imágenes/video4-buscador-sv4-main$ 
+
+VEMOS LOS NOMBRES y nos quedamos con la ultima linea:
+
+next@next-System:~/Imágenes/video4-buscador-sv4-main$ cat bundle.js | grep "skills: " -B 6 | grep "sQlI" -i -B 6 | grep "name: " | awk 'NF{print $NF}'
+"Validation",
+"EarlyAccess",
+"GoodGames",
+"Scavenger",
+"Enterprise",
+"Bankrobber",
+"Altered",
+"Holiday",
+"Control",
+"Cache",
+"Breadcrumbs",
+"MultiMaster",
+"Oz",
+"Nightmare",
+"Cronos",
+"Writer",
+"Union",
+"Phoenix",
+"Europa",
+"Falafel",
+"Charon",
+"Catch",
+"Flujab",
+"Cascade",
+next@next-System:~/Imágenes/video4-buscador-sv4-main$ 
+
+SUBSTITUIMOS LAS COMILLAS Y LAS COMAS:
+
+next@next-System:~/Imágenes/video4-buscador-sv4-main$ cat bundle.js | grep "skills: " -B 6 | grep "sQlI" -i -B 6 | grep "name: " | awk 'NF{print $NF}' | tr -d '"'
+Validation,
+EarlyAccess,
+GoodGames,
+Scavenger,
+Enterprise,
+Bankrobber,
+Altered,
+Holiday,
+Control,
+Cache,
+Breadcrumbs,
+MultiMaster,
+Oz,
+Nightmare,
+Cronos,
+Writer,
+Union,
+Phoenix,
+Europa,
+Falafel,
+Charon,
+Catch,
+Flujab,
+Cascade,
+next@next-System:~/Imágenes/video4-buscador-sv4-main$ cat bundle.js | grep "skills: " -B 6 | grep "sQlI" -i -B 6 | grep "name: " | awk 'NF{print $NF}' | tr -d '"' | tr -d ','
+Validation
+EarlyAccess
+GoodGames
+Scavenger
+Enterprise
+Bankrobber
+Altered
+Holiday
+Control
+Cache
+Breadcrumbs
+MultiMaster
+Oz
+Nightmare
+Cronos
+Writer
+Union
+Phoenix
+Europa
+Falafel
+Charon
+Catch
+Flujab
+Cascade
+next@next-System:~/Imágenes/video4-buscador-sv4-main$ 
+
+
+next@next-System:~/Imágenes/video4-buscador-sv4-main$ cat bundle.js | grep "skills: " -B 6 | grep "sQlI" -i -B 6 | grep "name: " | awk 'NF{print $NF}' | tr -d '"' | tr -d ',' | column
+Validation      Scavenger       Altered         Cache           Oz              Writer          Europa          Catch
+EarlyAccess     Enterprise      Holiday         Breadcrumbs     Nightmare       Union           Falafel         Flujab
+GoodGames       Bankrobber      Control         MultiMaster     Cronos          Phoenix         Charon          Cascade
+next@next-System:~/Imágenes/video4-buscador-sv4-main$ 
+
+next@next-System:~/Imágenes/video4-buscador-sv4-main$ cat bundle.js | grep "skills: " -B 6 | grep "SNMP Enumeration" -i -B 6 | grep "name: " | awk 'NF{print $NF}' | tr -d '"' | tr -d ',' | column
+Mischief        Pit             Antique         Conceal
+next@next-System:~/Imágenes/video4-buscador-sv4-main$ 
+
+next@next-System:~/Imágenes/video4-buscador-sv4-main$ cat bundle.js | grep "skills: " -B 6 | grep "Active Directory" -i -B 6 | grep "name: " | awk 'NF{print $NF}' | tr -d '"' | tr -d ',' | column
+Tentacle        Intelligence    Object          Querier         MultiMaster     Fulcrum
+Blackfield      Sizzle          Mantis          Search          Reel            Cascade
+next@next-System:~/Imágenes/video4-buscador-sv4-main$
+
+//////////////////////////////////
+
+ULTIMO Pasos
+
+next@next-System:~/Imágenes/video4-buscador-sv4-main$ ./html-machines.github34--final.sh -s "Active Directory"
+
+[!]Se va a buscar por la slill Active Directory
+
+
+[!]Se representan las maquinas donde se toca la Active Directory  {endColour}
+
+Tentacle        Intelligence    Object          Querier         MultiMaster     Fulcrum
+Blackfield      Sizzle          Mantis          Search          Reel            Cascade
+next@next-System:~/Imágenes/video4-buscador-sv4-main$ 
+
+next@next-System:~/Imágenes/video4-buscador-sv4-main$ ./html-machines.github34--final.sh -s "Server Side Template Injection"
+
+[!]Se va a buscar por la slill Server Side Template Injection
+
+
+[!]Se representan las maquinas donde se toca la Server Side Template Injection  {endColour}
+
+Epsilon         NunChucks       GoodGames       Oz              Anubis          Noter
+Flustered       Bolt            Hancliffe       Catch           Late            Doctor
+next@next-System:~/Imágenes/video4-buscador-sv4-main$ 

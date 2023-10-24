@@ -1,0 +1,223 @@
+PARA INICIAR PROGRAMA:
+
+next@next-System:/opt/htmlmachines/Video3$ ./html-machines.github34.sh
+
+[*] Usage: ./html-machines.github34.sh
+
+        u) Download or update necessary files
+
+        m) Search mode of name machine
+        i) Buscar por direccion IP
+        h) Show this help panel
+
+next@next-System:/opt/htmlmachines/Video3$ ./html-machines.github34.sh -u
+
+        u)Comprobando si hay actualizaciones pendientes
+
+        u) [*] No hay actualizaciones detectadas esta todo al dia
+
+        u) [*] Los archivos han sido actualizados
+next@next-System:/opt/htmlmachines/Video3$ ./html-machines.github34.sh -u
+
+        u)Comprobando si hay actualizaciones pendientes
+
+        u) [*] No hay actualizaciones detectadas esta todo al dia
+
+        u) [*] Los archivos han sido actualizados
+next@next-System:/opt/htmlmachines/Video3$ ./html-machines.github34.sh -m Forge
+
+        u) [*] Listando las propiedades de la maquina Forge:
+
+name: Forge
+ip: 10.10.11.111
+so: Linux
+dificultad: Media
+skills: Bypassing URL Blacklist Server Side Request Forgery (SSRF) Abusing Sudoers Privilege (Abusing Python Script)
+like: eWPT OSWE OSCP
+youtube: https://www.youtube.com/watch?v=6JWPJ3YgDXc
+next@next-System:/opt/htmlmachines/Video3$ ./html-machines.github34.sh -i 10.10.10.244
+
+        i) [*] La IP es 10.10.10.244
+
+
+        [*]) [*] La maquina correspondiente para la IP 10.10.10.244 es Tentacle
+
+
+        u) [*] Listando las propiedades de la maquina Tentacle:
+
+name: Tentacle
+ip: 10.10.10.244
+so: Linux
+dificultad: Difícil
+skills: DNS Enumeration (dnsenum) SQUID Proxy WPAD Enumeration OpenSMTPD v2.0.0 Exploit SSH using Kerberos (gssapi) Abusing .k5login file Abusing krb5.keytab file Active Directory
+like: eCPPTv2 eCPTXv2 OSCP OSEP eWPT eWPTXv2 eWPTXv2 OSWE Active Directory
+youtube: https://www.youtube.com/watch?v=hFIWuWVIDek
+activeDirectory: Active Directory
+next@next-System:/opt/htmlmachines/Video3$ ./html-machines.github34.sh -u
+
+        u)Comprobando si hay actualizaciones pendientes
+
+        u) [*] No hay actualizaciones detectadas esta todo al dia
+
+        u) [*] Los archivos han sido actualizados
+next@next-System:/opt/htmlmachines/Video3$ ./html-machines.github34.sh -u
+
+        u)Comprobando si hay actualizaciones pendientes
+
+        u) [*] No hay actualizaciones detectadas esta todo al dia
+
+next@next-System:/opt/htmlmachines/Video3$ 
+
+///////////////////////////////////////////////
+///////////////////////////////////////////////
+///////////////////////////////////////////////
+
+next@next-System:/opt/htmlmachines/Video3$ git push origin main
+To https://github.com/NEBULA1978/htmlmachines.git
+ ! [rejected]        main -> main (non-fast-forward)
+error: falló el empuje de algunas referencias a 'https://github.com/NEBULA1978/htmlmachines.git'
+ayuda: Actualizaciones fueron rechazadas porque la punta de tu rama actual está
+ayuda: detrás de su contraparte remota. Integra los cambios remotos (es decir
+ayuda: 'git pull ...') antes de empujar de nuevo.
+ayuda: Mira 'Note about fast-forwards' en 'git push --help' para más detalles.
+next@next-System:/opt/htmlmachines/Video3$  ¿como soluciono
+
+Este error ocurre cuando intentas empujar tus cambios a una rama remota que ha sido actualizada por otra persona. Para solucionarlo, necesitas integrar los cambios remotos en tu rama local antes de empujar de nuevo.
+
+Puedes hacerlo con los siguientes comandos:
+
+bash
+
+# Descarga los cambios remotos
+git fetch origin
+
+# Integra los cambios descargados en tu rama local
+git merge origin/main
+
+# Ahora puedes empujar tus cambios a la rama remota
+git push origin main
+
+Si tienes conflictos al integrar los cambios remotos, necesitarás resolverlos antes de poder empujar de nuevo.
+
+
+
+//////////////////////////////////////////////////////
+//////////////////////////////////////////////////////
+//////////////////////////////////////////////////////
+
+next@next-System:~/Documentos/Buscador-sv4-ultimo/htmlmachines/Video4$  cat bundle.js | awk "/name: \"Forge\"/,/resuelta/" | grep -vE "id:|sku:|resuelta" |tr -d '"'
+            name: Forge,
+            ip: 10.10.11.111,
+            so: Linux,
+            dificultad: Media,
+            skills: Bypassing URL Blacklist Server Side Request Forgery (SSRF) Abusing Sudoers Privilege (Abusing Python Script),
+            like: eWPT OSWE OSCP,
+            youtube: https://www.youtube.com/watch?v=6JWPJ3YgDXc,
+next@next-System:~/Documentos/Buscador-sv4-ultimo/htmlmachines/Video4$  ¿como puedo filtrar para ver la linea de you tube
+
+Puede filtrar la línea de YouTube utilizando el siguiente comando de shell:
+
+bash
+
+cat bundle.js | awk "/name: \"Forge\"/,/resuelta/" | grep "youtube" | tr -d '"'
+
+El comando grep busca en el texto la cadena "youtube" y solo muestra
+Ramonet Pascualet
+para ver solo la linea de you tube
+
+Puede usar el siguiente comando para ver solo la línea de YouTube:
+
+bash
+
+cat bundle.js | awk "/name: \"Forge\"/,/resuelta/" | grep "youtube" | tr -d '"' | awk -F: '{print $2}'
+
+El comando awk -F: divide el texto en campos utilizando el separador ":", y la acción {print $2} imprime el segundo campo (en este caso, la URL de YouTube).
+Ramonet Pascualet
+ cat bundle.js | awk "/name: \"Forge\"/,/resuelta/" | grep -vE "id:|sku:|resuelta" |tr -d '"' me refiero con esta expresion | ?¿?¿
+
+Esta expresión de shell se utiliza para filtrar y procesar el contenido del archivo bundle.js. Aquí está una descripción detallada de cada componente:
+
+    cat bundle.js: Este comando lee el archivo bundle.js y lo envía a la salida estándar.
+
+    awk "/name: \"Forge\"/,/resuelta/": Este comando utiliza awk para imprimir las líneas entre las líneas que contienen "name: "Forge"" y "resuelta".
+
+    `grep -vE "id:|sku:|
+
+Ramonet Pascualet
+con la ultima expresion añadir una tuberia para solo ver la linea de youtube
+
+Puede añadir una tubería adicional para ver solo la línea de YouTube utilizando el siguiente comando:
+
+perl
+
+cat bundle.js | awk "/name: \"Forge\"/,/resuelta/" | grep -vE "id:|sku:|resuelta" | tr -d '"' | grep "youtube" | awk -F: '{print $2}'
+
+El comando grep "youtube" busca en el texto la cadena "youtube" y solo muestra las líneas que coincidan. La tubería adicional awk -F: '{print $2}' divide el texto en campos utilizando el separador ":" y imprime el segundo campo (en este caso, la URL de YouTube).
+Ramonet Pascualet
+cat bundle.js | awk "/name: \"Forge\"/,/resuelta/" | grep -vE "id:|sku:|resuelta" | tr -d '"' | grep "youtube" ¿para quedarme con el ultimo argumento con otra tuberia ¿como seria?
+
+Puede quedarse con el último argumento (la URL de YouTube) utilizando el siguiente comando:
+
+perl
+
+cat bundle.js | awk "/name: \"Forge\"/,/resuelta/" | grep -vE "id:|sku:|resuelta" | tr -d '"' | grep "youtube" | awk -F: '{print $2}'
+
+Este comando utiliza awk -F: '{print $2}' para dividir el texto en campos utilizando el separador ":" y imprimir el segundo campo (en este caso, la URL de YouTube).
+Ramonet Pascualet
+con NF en la ultima tuberia puedes cambiarme
+
+Sí, también puede utilizar NF (el número total de campos) en la última tubería para imprimir la URL de YouTube, como se muestra a continuación:
+
+perl
+
+cat bundle.js | awk "/name: \"Forge\"/,/resuelta/" | grep -vE "id:|sku:|resuelta" | tr -d '"' | grep "youtube" | awk -F: '{print $NF}'
+
+El comando awk -F: '{print $NF}' divide el texto en campos utilizando el separador ":" y imprime el último campo (en este caso, la URL de YouTube).
+Ramonet Pascualet
+cat bundle.js | awk "/name: \"Forge\"/,/resuelta/" | grep -vE "id:|sku:|resuelta" | tr -d '"' | grep "youtube" | awk  '{print $NF}'
+asi me referia¿es correcto?
+
+Sí, es correcto. Este comando imprimirá la URL de YouTube utilizando awk para imprimir el último argumento en cada línea. Sin especificar -F:, awk utilizará el valor predeterminado de FS (el separador de campos), que es el espacio en blanco.
+
+
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////
+
+cat bundle.js | awk "/name: \"Tentacle\"/,/resuelta/" | grep -vE "id:|sku:|resuelta" | tr -d '"' | tr -d ',' | sed 's/^ *//'
+
+name: Tentacle
+ip: 10.10.10.244
+so: Linux
+dificultad: Difícil
+skills: DNS Enumeration (dnsenum) SQUID Proxy WPAD Enumeration OpenSMTPD v2.0.0 Exploit SSH using Kerberos (gssapi) Abusing .k5login file Abusing krb5.keytab file Active Directory
+like: eCPPTv2 eCPTXv2 OSCP OSEP eWPT eWPTXv2 eWPTXv2 OSWE Active Directory
+youtube: https://www.youtube.com/watch?v=hFIWuWVIDek
+activeDirectory: Active Directory
+next@next-System:~/Documentos/Buscador-sv4-ultimo/htmlmachines/Video4$ 
+
+
+////////////////////////////////
+
+next@next-System:~/Documentos/Buscador-sv4-ultimo/htmlmachines/Video4$ cat bundle.js | awk "/name: \"Tentacle\"/,/resuelta/" | grep -vE "id:|sku:|resuelta" | tr -d '"' | tr -d ',' | sed 's/^ *//' | grep "youtube" | awk  'NF{print $NF}'
+https://www.youtube.com/watch?v=hFIWuWVIDek
+next@next-System:~/Documentos/Buscador-sv4-ultimo/htmlmachines/Video4$ 
+
+/////////////////////////////////////
+
+voy video4 minuto 11.09 me falla la funcion:
+function getYoutubeLink() {
+  # echo "Obtener enlace de youtube"
+
+  machineName="$1"
+
+  youtubeLink="$(cat bundle.js | awk "/name: "$machineName"\"/,/resuelta/" | grep -vE "id:|sku:|resuelta" | tr -d '"' | tr -d ',' | sed 's/^ *//' | grep "youtube" | awk 'NF{print $NF}')"
+
+  if [ $youtubeLink ]; then
+    echo -e "\n${greenColour}[!] El tutorial para esta maquina esta en este enlace: $youtubeLink${endColour}\n"
+
+  else
+    echo -e "\n${redColour}[!] La maquina proporcionada no existe${endColour}\n"
+
+  fi
+}
