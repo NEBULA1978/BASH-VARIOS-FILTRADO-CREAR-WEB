@@ -18,12 +18,11 @@ opciones=(
 
 # -eq es un operador de comparación en Bash que significa "igual a". Aquí están los otros operadores de comparación con sus traducciones en inglés y español:
 
-#     -ne: not equal to (no igual a)
-#     -lt: less than (menor que)
-#     -le: less than or equal to (menor o igual que)
-#     -gt: greater than (mayor que)
-#     -ge: greater than or equal to (mayor o igual que)
-
+    # -ne: not equal to (no igual a)
+    # -lt: less than (menor que)
+    # -le: less than or equal to (menor o igual que)
+    # -gt: greater than (mayor que)
+    # -ge: greater than or equal to (mayor o igual que)
 
 # Iniciamos un bucle infinito para mostrar el menú hasta que se elija la opción de salida
 while true; do
