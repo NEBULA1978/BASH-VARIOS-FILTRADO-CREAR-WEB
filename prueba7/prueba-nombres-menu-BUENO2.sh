@@ -20,3 +20,4 @@ for i in "${!nombres[@]}"; do
     echo "read foo"
     echo ";;"
 done
+
