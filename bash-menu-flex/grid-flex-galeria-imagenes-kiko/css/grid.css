@@ -28,7 +28,7 @@ header {
             'photos';
     }
 }
-/* 
+
 @media only screen and (min-width: 600px) {
     #container {
         grid-template-areas: 'header'
@@ -45,8 +45,8 @@ header {
     }
 }
 
-@media only screen and (min-width: 992px) {}
+/* @media only screen and (min-width: 992px) {}
 
 @media only screen and (min-width: 1200px) {}
 
-@media only screen and (min-width: 1500px) {} */
+@media only screen and (min-width: 1500px) {}  */
