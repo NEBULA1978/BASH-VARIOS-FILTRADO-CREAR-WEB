@@ -1,0 +1,15 @@
+total 384K
+-rw-rw-r-- 1 next next    0 ago 27 20:54 salida_home.txt
+-rwxrwxr-x 1 next next 2,1K ago 27 20:51 menubase.sh
+drwx------ 2 next next 4,0K ago 27 20:26 ICD-17_ComandosManejoDatos
+-rw-rw-r-- 1 next next 374K ago 27 20:13 ICD-17_ComandosManejoDatos-20220827T181246Z-001.zip
+total 388K
+-rw-rw-r-- 1 next next  282 ago 27 20:54 salida_home.txt
+-rwxrwxr-x 1 next next 2,1K ago 27 20:51 menubase.sh
+drwx------ 2 next next 4,0K ago 27 20:26 ICD-17_ComandosManejoDatos
+-rw-rw-r-- 1 next next 374K ago 27 20:13 ICD-17_ComandosManejoDatos-20220827T181246Z-001.zip
+total 388K
+-rw-rw-r-- 1 next next  564 ago 27 20:55 salida_home.txt
+-rwxrwxr-x 1 next next 2,1K ago 27 20:51 menubase.sh
+drwx------ 2 next next 4,0K ago 27 20:26 ICD-17_ComandosManejoDatos
+-rw-rw-r-- 1 next next 374K ago 27 20:13 ICD-17_ComandosManejoDatos-20220827T181246Z-001.zip

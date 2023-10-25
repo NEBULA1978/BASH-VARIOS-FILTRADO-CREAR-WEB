@@ -1,0 +1,33 @@
+¿Cómo eliminar líneas con "sed"?
+A continuación, os mostramos varios ejemplos de uso:
+
+Eliminación de la tercera línea:
+sed '3d' mi_fichero.txt
+Eliminación de la línea conteniendo la cadena "awk":
+sed '/awk/d' mi_fichero.txt
+Eliminación de la última línea:
+sed '$d' mi_fichero.txt
+Eliminación de todas las líneas vacías:
+sed '/^$/d' mi_fichero.txt sed '/./!d' mi_fichero.txt
+Eliminación de la línea conteniendo una expresión regular:
+sed '/[0-9/][0-9]*$/d' mi_fichero.txt
+Eliminación del intervalo comprendido entre las líneas 7 y 9:
+sed '7,9d' mi_fichero.txt
+Lo mismo que el anterior, pero esta vez la dirección es reemplazada por una ocurrencia:
+sed '/-Inicio/,/-Fin/d' mi_fichero.txt
+¿Cómo hacer modificaciones permanentes?
+Los ejemplos precedentes únicamente modifican la visualización del archivo. Para realizar modificaciones permanentes en las antiguas versiones (<4) debe utilizarse un fichero temporal. Para GNU sed debe utilizarse el parámetro -i[sufijo] como en el siguiente ejemplo:
+
+sed -i".bak" '3d' mi_fichero.txt
+No mostrará el resultado en la salida estándar y modificará el fichero original "mi_fichero.txt" eliminando la tercera línea y creando un fichero de respaldo llamado "mi_fichero.txt.bak".
+
+EDICION DE TEXTO
+Cambiar las mayusculas a minusculas del texto dentro file
+
+tr 'A-Z' 'a-z' < <file>
+Agregar el texto en la última línea de file
+
+echo "<text>" >> <file> 
+Cambiar las letras de un texto por otras por ejemplo “a” por “A”
+
+echo <text> | sed 's/a/A/g'
