@@ -1,0 +1,52 @@
+#container {
+    display: grid;
+    /* 2 columnas para el header */
+    grid-template-areas: 'header header'
+    'sidebar photos';
+    /* 2 columnas entre el sidebar y photos */
+}
+
+header {
+    grid-area: header;
+    background-color: aqua;
+}
+
+#sidebar {
+    grid-area: sidebar;
+    background-color: brown;
+}
+
+#photo-container {
+    grid-area: photos;
+    background-color: coral;
+}
+
+@media only screen and (max-width: 600px) {
+    #container {
+        grid-template-areas: 'header'
+            'sidebar'
+            'photos';
+    }
+}
+/* 
+@media only screen and (min-width: 600px) {
+    #container {
+        grid-template-areas: 'header'
+            'sidebar'
+            'photos';
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #container {
+        display: grid;
+        grid-template-areas: 'header header'
+            'sidebar photos';
+    }
+}
+
+@media only screen and (min-width: 992px) {}
+
+@media only screen and (min-width: 1200px) {}
+
+@media only screen and (min-width: 1500px) {} */

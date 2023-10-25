@@ -1,0 +1,12 @@
+footer {
+    position: fixed;
+    /* Alineamos abajo */
+    bottom: 0;
+    /* A la derecha */
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border-top: 1px solid #ccc;
+    padding: 5px 0;
+    text-align: center;
+}

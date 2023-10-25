@@ -1,0 +1,332 @@
+Paso 1:
+
+Miro archivo con tree desde carpeta principal en carpeta bash-menu-flex y
+ dentro carpeta grid-flex-galeria-imagenes-kiko:
+
+❯ tree bash-menu-flex/grid-flex-galeria-imagenes-kiko
+bash-menu-flex/grid-flex-galeria-imagenes-kiko
+├── apuntes-grid-flex.txt
+├── img
+│   ├── alex-pugliese-rcp5cQB5Nog-unsplash.jpg
+│   ├── favicon.png
+│   ├── hector-ramon-perez-3xSGpXeEko8-unsplash.jpg
+│   ├── mar-bustos-ARVFsI-32Uk-unsplash.jpg
+│   ├── melisa-reinhold-M_FkZAskCPo-unsplash.jpg
+│   ├── niko-photos-tGTVxeOr_Rs-unsplash.jpg
+│   ├── rey_atanagildo.png
+│   ├── rey_ataulfo.png
+│   ├── rey_ervigio.png
+│   ├── rey_leogivildo.png
+│   ├── rey_recesvinto.png
+│   ├── rey_sisebuto.png
+│   ├── rey_teodorico.png
+│   └── roberto-blacio-01Gu3OjGvQw-unsplash.jpg
+├── index.html
+└── style.css
+
+1 directory, 17 files
+
+    ~/E/T/BASH-TEXTO3  ✔  
+
+//////////////////////////////////
+Paso 2 
+
+Tengo archivo index.html:
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Galeria imagenes</title>
+        <link rel="stylesheet" href="style.css">
+        <!-- Link del logo -->
+        <link rel="icon" type="image/png" href="img/favicon.png">
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>Pepe Pascual Fotografia</h1>
+                <ul>
+                    <li><a href="#" class="active">Fotografias</a></li>
+                    <li><a href="#" class="active">Sobre mi</a></li>
+                    <li><a href="#" class="active">Contacto</a></li>
+                </ul>
+            </header>
+
+            <div id="sidebar">
+                <ul>
+                    <li><a href="#" class="active">Las mejores</a></li>
+                    <li><a href="#">Retratos</a></li>
+                    <li><a href="#">Paisajes</a></li>
+                    <li><a href="#">Urbano</a></li>
+                    <li><a href="#">Animales</a></li>
+                </ul>
+            </div>
+
+            <section id="photo-container"></section>
+        </div>
+    </body>
+</html>
+
+
+//////////////////////////////////
+//////////////////////////////////
+
+Paso 3
+
+Creo archivo css common.css y colors.css para reglas generales:
+
+
+
+//////////////////////////////////
+//////////////////////////////////
+
+Paso 4
+
+Empezamos grid layout:
+De momento se ve asi:
+
+Pepe Pascual Fotografia
+
+Fotografias
+Sobre mi
+Contacto
+Las mejores
+Retratos
+Paisajes
+Urbano
+Animales
+
+
+//////////////////////////////////
+//////////////////////////////////
+
+Paso 5
+
+tengo grid pero comentado responsive movile en archivo grid.css:
+Archivos creados:
+
+❯ tree
+.
+├── apuntes-grid-flex.txt
+├── css
+│   ├── colors.css
+│   ├── common.css
+│   ├── grid.css
+│   └── style.css
+├── img
+│   ├── alex-pugliese-rcp5cQB5Nog-unsplash.jpg
+│   ├── favicon.png
+│   ├── hector-ramon-perez-3xSGpXeEko8-unsplash.jpg
+│   ├── mar-bustos-ARVFsI-32Uk-unsplash.jpg
+│   ├── melisa-reinhold-M_FkZAskCPo-unsplash.jpg
+│   ├── niko-photos-tGTVxeOr_Rs-unsplash.jpg
+│   ├── rey_atanagildo.png
+│   ├── rey_ataulfo.png
+│   ├── rey_ervigio.png
+│   ├── rey_leogivildo.png
+│   ├── rey_recesvinto.png
+│   ├── rey_sisebuto.png
+│   ├── rey_teodorico.png
+│   └── roberto-blacio-01Gu3OjGvQw-unsplash.jpg
+└── index.html
+
+2 directories, 20 files
+
+//////////////////
+//////////////////
+
+Archivos creados PARTE 1 grid:
+ el header 2 columnas y el sidebar una columna y main de imagenes a la derecha sidebar en tamaño pc:
+
+ cat css/*
+───────┬────────────────────────────────────────────────────────────────────────────────────────
+       │ File: css/colors.css
+───────┼────────────────────────────────────────────────────────────────────────────────────────
+   1   │ :root {
+   2   │     --color-primary: #05a081;
+   3   │ }
+───────┴────────────────────────────────────────────────────────────────────────────────────────
+───────┬────────────────────────────────────────────────────────────────────────────────────────
+       │ File: css/common.css
+───────┼────────────────────────────────────────────────────────────────────────────────────────
+   1   │ * {
+   2   │     box-sizing: border-box;
+   3   │ }
+   4   │ 
+   5   │ body {
+   6   │     margin: 0;
+   7   │     padding: 0;
+   8   │     font-family: 'Courier New', Courier, monospace;
+   9   │ }
+───────┴────────────────────────────────────────────────────────────────────────────────────────
+───────┬────────────────────────────────────────────────────────────────────────────────────────
+       │ File: css/grid.css
+───────┼────────────────────────────────────────────────────────────────────────────────────────
+   1   │ #container {
+   2   │     display: grid;
+   3   │     /* 2 columnas para el header */
+   4   │     grid-template-areas: 'header header'
+   5   │     'sidebar photos';
+   6   │     /* 2 columnas entre el sidebar y photos */
+   7   │ }
+   8   │ 
+   9   │ header {
+  10   │     grid-area: header;
+  11   │     background-color: aqua;
+  12   │ }
+  13   │ 
+  14   │ #sidebar {
+  15   │     grid-area: sidebar;
+  16   │     background-color: brown;
+  17   │ }
+  18   │ 
+  19   │ #photo-container {
+  20   │     grid-area: photos;
+  21   │     background-color: coral;
+  22   │ }
+  23   │ /* 
+  24   │ @media only screen and (max-width: 600px) {
+  25   │     #container {
+  26   │         grid-template-areas: 'header'
+  27   │             'sidebar'
+  28   │             'photos';
+  29   │     }
+  30   │ }
+  31   │ 
+  32   │ @media only screen and (min-width: 600px) {
+  33   │     #container {
+  34   │         grid-template-areas: 'header'
+  35   │             'sidebar'
+  36   │             'photos';
+  37   │     }
+  38   │ }
+  39   │ 
+  40   │ @media only screen and (min-width: 768px) {
+  41   │     #container {
+  42   │         display: grid;
+  43   │         grid-template-areas: 'header header'
+  44   │             'sidebar photos';
+  45   │     }
+  46   │ }
+  47   │ 
+  48   │ @media only screen and (min-width: 992px) {}
+  49   │ 
+  50   │ @media only screen and (min-width: 1200px) {}
+  51   │ 
+  52   │ @media only screen and (min-width: 1500px) {} */
+───────┴────────────────────────────────────────────────────────────────────────────────────────
+───────┬────────────────────────────────────────────────────────────────────────────────────────
+       │ File: css/style.css
+───────┼────────────────────────────────────────────────────────────────────────────────────────
+   1   │ @import "common.css";
+   2   │ @import "colors.css";
+   3   │ @import "grid.css";
+───────┴────────────────────────────────────────────────────────────────────────────────────────
+
+ cat index.html
+───────┬────────────────────────────────────────────────────────────────────────────────────────
+       │ File: index.html
+───────┼────────────────────────────────────────────────────────────────────────────────────────
+   1   │ <!DOCTYPE html>
+   2   │ <html lang="es">
+   3   │ 
+   4   │ <head>
+   5   │     <meta charset="UTF-8">
+   6   │     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   7   │     <title>Galería de Fotos de Kiko Palomares</title>
+   8   │     <link rel="icon" type="image/png" href="img/favicon.png" />
+   9   │     <link rel="stylesheet" href="css/style.css" />
+  10   │ </head>
+  11   │ 
+  12   │ <body>
+  13   │ 
+  14   │     <div id="container">
+  15   │         <header>
+  16   │             <h1>Kiko Palomares Fotografía</h1>
+  17   │             <ul>
+  18   │                 <li><a href="#" class="active">Fotografías</a></li>
+  19   │                 <li><a href="#">Sobre mí</a></li>
+  20   │                 <li><a href="#">Contacto</a></li>
+  21   │             </ul>
+  22   │         </header>
+  23   │         <div id="sidebar">
+  24   │             <ul>
+  25   │                 <li><a href="#" class="active">Las mejores</a></li>
+  26   │                 <li><a href="#">Retratos</a></li>
+  27   │                 <li><a href="#">Paisajes</a></li>
+  28   │                 <li><a href="#">Urbano</a></li>
+  29   │                 <li><a href="#">Animales</a></li>
+  30   │             </ul>
+  31   │         </div>
+  32   │         <section id="photo-container">Imagenes</section>
+  33   │     </div>
+  34   │ 
+  35   │     <!-- <footer>&copy; Kiko Palomares Academy</footer>
+  36   │ 
+  37   │     <script src="js/main.js"></script> -->
+  38   │ </body>
+  39   │ 
+  40   │ </html>
+───────┴────────────────────────────────────────────────────────────────────────────────────────
+
+
+
+//////////////////////////////////
+//////////////////////////////////
+
+Paso 6
+
+
+
+
+//////////////////////////////////
+//////////////////////////////////
+
+
+
+
+//////////////////////////////////
+//////////////////////////////////
+
+
+
+
+//////////////////////////////////
+//////////////////////////////////
+
+
+
+
+//////////////////////////////////
+//////////////////////////////////
+
+
+
+
+//////////////////////////////////
+//////////////////////////////////
+
+
+
+
+//////////////////////////////////
+//////////////////////////////////
+
+
+
+
+//////////////////////////////////
+//////////////////////////////////
+
+
+
+
+//////////////////////////////////
+//////////////////////////////////
+
+
+
+
+//////////////////////////////////
