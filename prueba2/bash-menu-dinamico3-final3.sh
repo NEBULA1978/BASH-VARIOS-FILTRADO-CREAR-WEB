@@ -4,8 +4,7 @@ while true; do
     echo "Menú:"
     echo "1. Mostrar contenido del archivo de búsqueda."
     echo "2. Copiar un rango de líneas del archivo de búsqueda al archivo de destino."
-    echo "3. Introduzca el nombre del archivo en el que buscar la palabra e Introduzca la palabra a buscar."
-    echo "4. Modificar el título en el archivo de introducción."
+    echo "3. Introduzca el nombre del archivo en el que buscar la palabra e Introduzca la palabra a buscar."    echo "4. Modificar el título en el archivo de introducción."
     echo "5. Eliminar una línea del archivo de introducción."
     echo "6. Salir"
     read -p "Seleccione una opción (1/2/3/4/5/6): " choice
