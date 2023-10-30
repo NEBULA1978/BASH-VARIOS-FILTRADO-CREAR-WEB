@@ -49,7 +49,7 @@ while true; do
     8)
         read -p "Introduzca la palabra a buscar en archivos de la carpeta actual: " word_in_files
         echo "Resultados de la búsqueda por palabra '$word_in_files' en la carpeta actual:"
-        grep -rnw . -e "$word_in_files"
+        grep -rnw . -e "$word_in_files" | awk -F: '{print "Archivo:", $1, "Línea:", $2, "Texto:", $3}'
         ;;
     6)
         echo "Saliendo del menú."
