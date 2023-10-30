@@ -1,47 +1,30 @@
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nueva etiqueta</title>
-Twitter
- 
-<title>Nueva etiqueta</title2>
-<body>
-
-Telegram
- del comando awk en Linux y Unix
-Uso del comando AWK en Linux y UNIX con ejemplos
-Publicado porJoan Carles
-10 octubre, 2021
-2 comentariosen Uso del comando AWK en Linux y UNIX con ejemplos
-#!/bin/bash
-
-while true; do
-    echo "Menú:"
-    echo "1. Mostrar contenido del archivo de búsqueda."
-    echo "2. Copiar un rango de líneas del archivo de búsqueda al archivo de destino."
-    echo "3. Eliminar una palabra del archivo de introducción."
-    echo "4. Modificar el título en el archivo de introducción."
-    echo "5. Eliminar una línea del archivo de introducción."
-    echo "6. Salir"
-
-
-
-
-
-
-
-    
-</body>
-</html> 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
+Archivo: ./bash-menu-dinamico3-final3.sh Línea: 5 Texto:     echo "1. Mostrar contenido del archivo de búsqueda."
+Archivo: ./bash-menu-dinamico3-final3.sh Línea: 6 Texto:     echo "2. Copiar un rango de líneas del archivo de búsqueda al archivo de destino."
+Archivo: ./bash-menu-dinamico3-final3.sh Línea: 15 Texto:         read -p "Introduzca el nombre del archivo de búsqueda
+Archivo: ./bash-menu-dinamico3-final3.sh Línea: 19 Texto:         read -p "Introduzca el nombre del archivo de búsqueda
+Archivo: ./bash-menu-dinamico3-final2.sh Línea: 5 Texto:     echo "1. Mostrar contenido del archivo de búsqueda."
+Archivo: ./bash-menu-dinamico3-final2.sh Línea: 6 Texto:     echo "2. Copiar una línea del archivo de búsqueda a otro archivo."
+Archivo: ./bash-menu-dinamico3-final2.sh Línea: 15 Texto:             read -p "Introduzca el nombre del archivo de búsqueda
+Archivo: ./bash-menu-dinamico3-final2.sh Línea: 19 Texto:             read -p "Introduzca el nombre del archivo de búsqueda
+Archivo: ./bash-menu-dinamico3-final.sh Línea: 53 Texto:         echo "Resultados de la búsqueda por palabra '$word_in_files' en la carpeta actual se han guardado en '$output_file'."
+Archivo: ./bash-menu-dinamico3-final4.sh Línea: 5 Texto:     echo "1. Mostrar contenido del archivo de búsqueda."
+Archivo: ./bash-menu-dinamico3-final4.sh Línea: 6 Texto:     echo "2. Copiar un rango de líneas del archivo de búsqueda al archivo de destino."
+Archivo: ./bash-menu-dinamico3-final4.sh Línea: 11 Texto:     echo "7. Buscar texto en el archivo de búsqueda."
+Archivo: ./bash-menu-dinamico3-final3.sh Línea: 5 Texto:     echo "1. Mostrar contenido del archivo de búsqueda."
+Archivo: ./bash-menu-dinamico3-final3.sh Línea: 6 Texto:     echo "2. Copiar un rango de líneas del archivo de búsqueda al archivo de destino."
+Archivo: ./bash-menu-dinamico3-final3.sh Línea: 15 Texto:         read -p "Introduzca el nombre del archivo de búsqueda
+Archivo: ./bash-menu-dinamico3-final3.sh Línea: 19 Texto:         read -p "Introduzca el nombre del archivo de búsqueda
+Archivo: ./bash-menu-dinamico3-final2.sh Línea: 5 Texto:     echo "1. Mostrar contenido del archivo de búsqueda."
+Archivo: ./bash-menu-dinamico3-final2.sh Línea: 6 Texto:     echo "2. Copiar una línea del archivo de búsqueda a otro archivo."
+Archivo: ./bash-menu-dinamico3-final2.sh Línea: 15 Texto:             read -p "Introduzca el nombre del archivo de búsqueda
+Archivo: ./bash-menu-dinamico3-final2.sh Línea: 19 Texto:             read -p "Introduzca el nombre del archivo de búsqueda
+Archivo: ./bash-menu-dinamico3-final.sh Línea: 53 Texto:         echo "Resultados de la búsqueda por palabra '$word_in_files' en la carpeta actual se han guardado en '$output_file'."
+Archivo: ./bash-menu-dinamico3-final4.sh Línea: 5 Texto:     echo "1. Mostrar contenido del archivo de búsqueda."
+Archivo: ./bash-menu-dinamico3-final4.sh Línea: 6 Texto:     echo "2. Copiar un rango de líneas del archivo de búsqueda al archivo de destino."
+Archivo: ./bash-menu-dinamico3-final4.sh Línea: 11 Texto:     echo "7. Buscar texto en el archivo de búsqueda."
+Archivo: ./bash-menu-dinamico3-final4.sh Línea: 20 Texto:         read -p "Introduzca el número del archivo de búsqueda
+Archivo: ./bash-menu-dinamico3-final4.sh Línea: 29 Texto:         read -p "Introduzca el número del archivo de búsqueda
+Archivo: ./bash-menu-dinamico3-final4.sh Línea: 86 Texto:         read -p "Introduzca el número del archivo de búsqueda
+Archivo: ./bash-menu-dinamico3-final4.sh Línea: 20 Texto:         read -p "Introduzca el número del archivo de búsqueda
+Archivo: ./bash-menu-dinamico3-final4.sh Línea: 29 Texto:         read -p "Introduzca el número del archivo de búsqueda
+Archivo: ./bash-menu-dinamico3-final4.sh Línea: 86 Texto:         read -p "Introduzca el número del archivo de búsqueda

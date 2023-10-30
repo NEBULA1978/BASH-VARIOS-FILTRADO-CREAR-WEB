@@ -48,9 +48,21 @@ while true; do
         ;;
     8)
         read -p "Introduzca la palabra a buscar en archivos de la carpeta actual: " word_in_files
-        echo "Resultados de la búsqueda por palabra '$word_in_files' en la carpeta actual:"
-        grep -rnw . -e "$word_in_files" | awk -F: '{print "Archivo:", $1, "Línea:", $2, "Texto:", $3}'
+        read -p "Introduzca el nombre del archivo para guardar los resultados: " output_file
+        grep -rnw . -e "$word_in_files" | awk -F: '{print "Archivo:", $1, "Línea:", $2, "Texto:", $3}' >"$output_file"
+        echo "Resultados de la búsqueda por palabra '$word_in_files' en la carpeta actual se han guardado en '$output_file'."
+
+        read -p "¿Desea insertar este resultado en un archivo específico? (s/n): " option_insert
+
+        if [ "$option_insert" = "s" ]; then
+            read -p "Introduzca el nombre del archivo donde desea insertar los resultados: " insert_file
+            read -p "Introduzca el número de línea donde desea insertar los resultados: " insert_line
+
+            sed -i "${insert_line}r $output_file" "$insert_file"
+            echo "Resultados insertados exitosamente en la línea $insert_line de '$insert_file'."
+        fi
         ;;
+
     6)
         echo "Saliendo del menú."
         exit 0
