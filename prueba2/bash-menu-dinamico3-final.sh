@@ -8,6 +8,7 @@ while true; do
     echo "4. Modificar el título en texto-introducir.txt."
     echo "5. Eliminar una línea de texto-introducir.txt."
     echo "7. Ver archivos carpeta actual."
+    echo "8. Buscar palabra en archivos de la carpeta actual."
 
     echo "6. Salir"
     read -p "Seleccione una opción (1/2/3/4/5/6): " choice
@@ -44,6 +45,11 @@ while true; do
     7)
         echo "Ver archivos carpeta actual"
         ls -lah
+        ;;
+    8)
+        read -p "Introduzca la palabra a buscar en archivos de la carpeta actual: " word_in_files
+        echo "Resultados de la búsqueda por palabra '$word_in_files' en la carpeta actual:"
+        grep -rnw . -e "$word_in_files"
         ;;
     6)
         echo "Saliendo del menú."
