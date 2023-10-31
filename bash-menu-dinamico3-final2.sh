@@ -16,7 +16,8 @@ while true; do
     case $choice in
     1)
         echo "Contenido de texto-buscar.txt con números de línea:"
-        nl texto-buscar.txt
+        nl texto-buscar.txt | more
+        read -n 1 -s -r -p "Presione cualquier tecla para continuar..."
         ;;
     2)
         read -p "Introduzca el número de línea a copiar: " line_number

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>selectores CSS</title>
+    <style>
+
+        /* Selector al elemento html */
+        div {
+            background-color: red;
+            font-size: 24px;
+            /* Si aumento valor veo linea roja debajo ultimo div */
+            padding: px;
+            margin: 20px 
+
+        }
+        /* A todods los elementos una fuente de 14px */
+        * {
+            font-size: 14px;
+        }
+
+        /* Selector por ID */
+        #div1{
+            background-color: green;
+        }
+
+        /* Selector por clase */
+        .elementoVioleta{
+            background-color: violet;
+        }
+
+        /* Selector por atributo */
+        [width="400px"]{
+            background-color: yellow;
+        }
+
+        /* Hover */
+        div:hover{
+            background-color: aquamarine;
+        }
+
+        /* Seudo elementos */
+        /* Me crea linea extra abajo roja */
+        /* div::before{
+            content: "->";
+        }
+        div::after{
+            content: "->";
+        } */
+
+        /* Todos los elelemntos div que esten dentro del main */
+        main div{
+            
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+    <main>
+        <h1>Tipos de CSS</h1>
+        <div id="div1">Elemento div</div>
+        <div class="elementoVioleta">Elemento div</div>
+        <div width="400px">Elemento div</div>
+        <div>Elemento div</div>
+
+    </main>
+
+</body>
+
+</html>

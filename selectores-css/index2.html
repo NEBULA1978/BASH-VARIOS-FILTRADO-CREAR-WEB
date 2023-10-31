@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>selectores CSS</title>
+    <style>
+
+        /* Selectores combinatorios */
+
+        /* Todos los elelemntos div que esten dentro del main */
+        main div{
+            background-color: red;
+        }
+
+        /* Selector de hijo directo */
+        /* Cualquier div que este dentro de etiqueta main justo despues */
+        main > div{
+            background-color: green;
+        }
+
+        /* Seleccionar el primer elemento en secuencia del mismo nivel, el primer div despues de main */
+        main + div{
+            background-color: yellow;
+        }
+
+        /* seleccionar todos los elelemntos en secuencia del mismo nivel */
+        /* los h3 despues de h2 me selecciona */
+        h2 ~ h3{
+            background-color: aqua;
+        }
+
+        /* /////////////////// */
+        /* /////////////////// */
+
+        /* Selectores avanzados */
+
+        /* Seleccion de un elemento cuyo atributo seleccionado esta formado por una cadena de caracteres la cual contiene el valor separado por esapcios */
+
+        /* Cualquier elelento que tenga la palabra maria le aplica font-size */
+
+        /* [value~="maria"]{
+            font-size: 24px;
+        }
+         */
+        /* Seleccion de un elemento cuyo atribto seleccionado comienza exactamente con el valor definodo */
+        /* Empezar con la palabra maria */
+
+        /* [value|="maria"]{
+            background-color: violet;
+        } */
+        
+        /* Selecion de un elemento cuyo atributo seleccionado comienza con el valor definido */
+        /* Si empieza por maria */
+
+        /* [value^="maria"]{
+            background-color: violet;
+        } */
+
+        /* Terminan con maria */
+
+        /* [value$="maria"]{
+            background-color: violet;
+        } */
+        
+        /* seleccion de un elemento cuyo atributo seleccionado incluye el valor definido */
+        
+        /* Que tengan patron de ia */
+        [value*="ia"]{
+            background-color: violet;
+        }
+
+        /* Podemos combinar varios en una linea */
+        /* main div,
+        main > div,
+        main + div{
+            background-color: red;
+        } */
+
+        
+
+
+    </style>
+</head>
+
+<body>
+
+    <main>
+        <h1>Tipos de CSS</h1>
+        <div id="div1">Elemento div</div>
+        <div class="elementoVioleta">Elemento div</div>
+        <div width="400px">Elemento div</div>
+        <div>Elemento div
+            <div>Elelemnto div hijo</div>
+
+        </div>
+
+        
+    </main>
+    
+    <div>Elemento div</div>
+
+    <h2>Lorem</h2>
+    <h3>Lorem</h3>
+    <h2>Lorem</h2>
+    <h3>Lorem</h3>
+    <h2>Lorem</h2>
+    <h3>Lorem</h3>
+    <h2>Lorem</h2>
+    <h3>Lorem</h3>
+
+    <input type="text" value="maria">
+    
+    <input type="text" value="jose maria">
+    
+    <input type="text" value="mariana">
+
+</body>
+
+</html>
