@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectores CSS</title>
+    <style>
+        /* Selectores combinatorios */
+        main div {
+            background-color: aqua;
+        }
+
+        main > div {
+            background-color: rgb(42, 54, 42);
+        }
+
+        main + div {
+            background-color: yellow;
+        }
+
+        h2 ~ h3 {
+            background-color: aqua;
+        }
+
+        /* Selectores avanzados */
+        [value*="maria"] {
+            font-size: 24px;
+        }
+
+        [value|="maria"] {
+            background-color: violet;
+        }
+
+        [value^="maria"] {
+            background-color: violet;
+        }
+
+        [value$="maria"] {
+            background-color: violet;
+        }
+
+        [value*="ia"] {
+            background-color: violet;
+        }
+
+        /* Responsive Design */
+        body {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                font-size: 14px;
+            }
+        }
+
+        
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Tipos de CSS</h1>
+        <section>
+            <h2>Selectores combinatorios</h2>
+            <div>
+                <h3>Ejemplo 1: Todos los elementos div que están dentro del main</h3>
+                <pre>
+                    main div {
+                        background-color: aqua;
+                    }
+                </pre>
+                <div id="div1">Elemento div</div>
+            </div>
+            <div>
+                <h3>Ejemplo 2: Cualquier div que esté dentro de la etiqueta main justo después</h3>
+                <pre>
+                    main > div {
+                        background-color: rgb(42, 54, 42);
+                    }
+                </pre>
+                <div class="elementoVioleta">Elemento div</div>
+            </div>
+            <div>
+                <h3>Ejemplo 3: Seleccionar el primer elemento en secuencia del mismo nivel (el primer div después de main)</h3>
+                <pre>
+                    main + div {
+                        background-color: yellow;
+                    }
+                </pre>
+                <div>Elemento div</div>
+            </div>
+            <div>
+                <h3>Ejemplo 4: Seleccionar todos los elementos en secuencia del mismo nivel (los h3 después de h2)</h3>
+                <pre>
+                    h2 ~ h3 {
+                        background-color: aqua;
+                    }
+                </pre>
+                <h2>Lorem</h2>
+                <h3>Lorem</h3>
+            </div>
+        </section>
+
+        <section>
+            <h2>Selectores avanzados</h2>
+            <div>
+                <h3>Ejemplo 5: Seleccionar elementos cuyo atributo 'value' contiene la palabra "maria"</h3>
+                <pre>
+                    [value*="maria"] {
+                        font-size: 24px;
+                    }
+                </pre>
+                <input type="text" value="maria">
+            </div>
+            <div>
+                <h3>Ejemplo 6: Seleccionar elementos cuyo atributo 'value' comienza exactamente con el valor "maria"</h3>
+                <pre>
+                    [value|="maria"] {
+                        background-color: violet;
+                    }
+                </pre>
+                <input type="text" value="jose maria">
+            </div>
+            <div>
+                <h3>Ejemplo 7: Seleccionar elementos cuyo atributo 'value' comienza con el valor "maria"</h3>
+                <pre>
+                    [value^="maria"] {
+                        background-color: violet;
+                    }
+                </pre>
+                <input type="text" value="maria123">
+            </div>
+            <div>
+                <h3>Ejemplo 8: Seleccionar elementos cuyo atributo 'value' termina con "maria"</h3>
+                <pre>
+                    [value$="maria"] {
+                        background-color: violet;
+                    }
+                </pre>
+                <input type="text" value="123maria">
+            </div>
+            <div>
+                <h3>Ejemplo 9: Seleccionar elementos cuyo atributo 'value' incluye el valor "ia"</h3>
+                <pre>
+                    [value*="ia"] {
+                        background-color: violet;
+                    }
+                </pre>
+                <input type="text" value="jose maria">
+            </div>
+        </section>
+    </main>
+</body>
+</html>
