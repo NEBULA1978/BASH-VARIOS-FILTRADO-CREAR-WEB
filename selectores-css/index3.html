@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectores CSS</title>
+    <style>
+        /* Estilo para Selectores Combinatorios */
+
+        /* Selecciona todos los elementos div que son descendientes de main */
+        main div {
+            background-color: red;
+        }
+
+        /* Selecciona todos los elementos div que son hijos inmediatos de main */
+        main > div {
+            background-color: green;
+        }
+
+        /* Selecciona el primer elemento div que sigue inmediatamente a main */
+        main + div {
+            background-color: yellow;
+        }
+
+        /* Selecciona todos los elementos h3 que son hermanos de h2 */
+        h2 ~ h3 {
+            background-color: aqua;
+        }
+
+        /* Estilo para Selectores Avanzados */
+
+        /* Selecciona los input que contienen la subcadena "ia" en su valor */
+        input[value*="ia"] {
+            background-color: violet;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+        <h1>Tipos de CSS</h1>
+
+        <!-- Seleccionado por "main div" -->
+        <div>Elemento div (Seleccionado por "main div")</div>
+
+        <!-- Seleccionado por "main div" -->
+        <div class="elementoVioleta">Elemento div (Seleccionado por "main div")</div>
+
+        <!-- Seleccionado por "main div" -->
+        <div width="400px">Elemento div (Seleccionado por "main div")</div>
+
+        <!-- Seleccionado por "main div" -->
+        <div>
+            Elemento div (Seleccionado por "main div")
+            <!-- Seleccionado por "main div" -->
+            <div>Elemento div hijo (Seleccionado por "main div")</div>
+        </div>
+    </main>
+
+    <!-- No tiene estilos CSS específicos -->
+
+    <div>Elemento div</div>
+
+    <!-- No tiene estilos CSS específicos -->
+
+    <h2>Lorem</h2>
+    <h3>Lorem</h3>
+    <h2>Lorem</h2>
+    <h3>Lorem</h3>
+    <h2>Lorem</h2>
+    <h3>Lorem</h3>
+    <h2>Lorem</h2>
+    <h3>Lorem</h3>
+
+    <!-- Seleccionado por "input[value*='ia']" -->
+    <input type="text" value="maria" style="background-color: violet;">
+
+    <!-- Seleccionado por "input[value*='ia']" -->
+    <input type="text" value="jose maria" style="background-color: violet;">
+
+    <!-- No seleccionado por los estilos CSS -->
+    <input type="text" value="mariana">
+</body>
+
+</html>

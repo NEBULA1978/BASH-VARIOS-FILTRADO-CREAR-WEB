@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectores CSS</title>
+    <style>
+        /* Selectores combinatorios */
+
+        /* Todos los elementos div que están dentro del main */
+        main div {
+            background-color: red;
+        }
+
+        /* Selector de hijo directo */
+        /* Cualquier div que esté dentro de la etiqueta main justo después */
+        main > div {
+            background-color: green;
+        }
+
+        /* Seleccionar el primer elemento en secuencia del mismo nivel, el primer div después de main */
+        main + div {
+            background-color: yellow;
+        }
+
+        /* Seleccionar todos los elementos en secuencia del mismo nivel */
+        /* Los h3 después de h2 me selecciona */
+        h2 ~ h3 {
+            background-color: aqua;
+        }
+
+        /* Selectores avanzados */
+
+        /* Seleccionar elementos cuyo atributo 'value' contiene la palabra "maria" */
+        /* Esto aplicará un font-size de 24px */
+        /* [value~="maria"] {
+            font-size: 24px;
+        }
+         */
+
+        /* Selección de elementos cuyo atributo 'value' comienza exactamente con el valor "maria" */
+        /* Empezar con la palabra "maria" */
+        /* [value|="maria"] {
+            background-color: violet;
+        } */
+
+        /* Selección de elementos cuyo atributo 'value' comienza con el valor "maria" */
+        /* Si empieza por "maria" */
+        /* [value^="maria"] {
+            background-color: violet;
+        } */
+
+        /* Selección de elementos cuyo atributo 'value' termina con "maria" */
+        /* Terminan con "maria" */
+        /* [value$="maria"] {
+            background-color: violet;
+        } */
+
+        /* Selección de elementos cuyo atributo 'value' incluye el valor "ia" */
+        /* Que tengan patrón de "ia" */
+        [value*="ia"] {
+            background-color: violet;
+        }
+
+        /* Podemos combinar varios en una línea */
+        /* main div,
+        main > div,
+        main + div{
+            background-color: red;
+        } */
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Tipos de CSS</h1>
+        <div id="div1">Elemento div</div>
+        <div class="elementoVioleta">Elemento div</div>
+        <div width="400px">Elemento div</div>
+        <div>Elemento div
+            <div>Elemento div hijo</div>
+        </div>
+    </main>
+
+    <div>Elemento div</div>
+
+    <h2>Lorem</h2>
+    <h3>Lorem</h3>
+    <h2>Lorem</h2>
+    <h3>Lorem</h3>
+    <h2>Lorem</h2>
+    <h3>Lorem</h3>
+    <h2>Lorem</h2>
+    <h3>Lorem</h3>
+
+    <!-- Seleccionado por "[value*='ia']" -->
+    <input type="text" value="maria" style="background-color: violet;">
+
+    <!-- Seleccionado por "[value*='ia']" -->
+    <input type="text" value="jose maria" style="background-color: violet;">
+
+    <!-- No seleccionado por los estilos CSS -->
+    <input type="text" value="mariana">
+</body>
+
+</html>

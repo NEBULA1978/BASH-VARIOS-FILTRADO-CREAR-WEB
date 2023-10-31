@@ -1,0 +1,206 @@
+You've provided an HTML document with CSS selectors and a request to create an example for each selector. I'll give you an example for each of the selectors you've defined in your CSS:
+
+Selectores Combinatorios:
+
+Selector: main div
+Description: Selects all <div> elements that are descendants of the <main> element.
+Example:
+html
+￼Copy code
+<main>
+    <div>Element 1</div>
+    <div>Element 2</div>
+</main>
+Selector: main > div
+
+Description: Selects all <div> elements that are immediate children of the <main> element.
+Example:
+html
+￼Copy code
+<main>
+    <div>Element 1</div>
+    <p>Not selected</p>
+</main>
+Selector: main + div
+
+Description: Selects the first <div> that immediately follows the <main> element.
+Example:
+html
+￼Copy code
+<main></main>
+<div>Selected</div>
+<div>Not selected</div>
+Selector: h2 ~ h3
+
+Description: Selects all <h3> elements that are siblings of <h2> elements.
+Example:
+html
+￼Copy code
+<h2>Heading 1</h2>
+<h3>Subheading 1</h3>
+<h2>Heading 2</h2>
+<h3>Subheading 2</h3>
+Selectores Avanzados:
+
+Selector: [value*="ia"]
+Description: Selects all elements that have an attribute containing the substring "ia."
+Example:
+html
+￼Copy code
+<input type="text" value="maria"> <!-- Selected -->
+<input type="text" value="jose maria"> <!-- Selected -->
+<input type="text" value="mariana"> <!-- Not selected -->
+Remember to include the CSS styles for each selector in your HTML document to see the visual effects in the browser.
+
+
+/////////////////////
+/////////////////////
+
+ESPAÑOL
+
+Selectores Combinatorios:
+
+Selector: main div
+Descripción: Selecciona todos los elementos <div> que son descendientes del elemento <main>.
+Ejemplo:
+html
+￼Copy code
+<main>
+    <div>Elemento 1</div>
+    <div>Elemento 2</div>
+</main>
+Selector: main > div
+
+Descripción: Selecciona todos los elementos <div> que son hijos inmediatos del elemento <main>.
+Ejemplo:
+html
+￼Copy code
+<main>
+    <div>Elemento 1</div>
+    <p>No seleccionado</p>
+</main>
+Selector: main + div
+
+Descripción: Selecciona el primer elemento <div> que sigue inmediatamente al elemento <main>.
+Ejemplo:
+html
+￼Copy code
+<main></main>
+<div>Seleccionado</div>
+<div>No seleccionado</div>
+Selector: h2 ~ h3
+
+Descripción: Selecciona todos los elementos <h3> que son hermanos de elementos <h2>.
+Ejemplo:
+html
+￼Copy code
+<h2>Título 1</h2>
+<h3>Subtítulo 1</h3>
+<h2>Título 2</h2>
+<h3>Subtítulo 2</h3>
+Selectores Avanzados:
+
+Selector: [value*="ia"]
+Descripción: Selecciona todos los elementos que tienen un atributo que contiene la subcadena "ia".
+Ejemplo:
+html
+￼Copy code
+<input type="text" value="maria"> <!-- Seleccionado -->
+<input type="text" value="jose maria"> <!-- Seleccionado -->
+<input type="text" value="mariana"> <!-- No seleccionado -->
+
+
+//////////////////////////////
+//////////////////////////////
+
+Html con css selectores varios:
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectores CSS</title>
+    <style>
+        /* Estilo para Selectores Combinatorios */
+
+        /* Selecciona todos los elementos div que son descendientes de main */
+        main div {
+            background-color: red;
+        }
+
+        /* Selecciona todos los elementos div que son hijos inmediatos de main */
+        main > div {
+            background-color: green;
+        }
+
+        /* Selecciona el primer elemento div que sigue inmediatamente a main */
+        main + div {
+            background-color: yellow;
+        }
+
+        /* Selecciona todos los elementos h3 que son hermanos de h2 */
+        h2 ~ h3 {
+            background-color: aqua;
+        }
+
+        /* Estilo para Selectores Avanzados */
+
+        /* Selecciona los input que contienen la subcadena "ia" en su valor */
+        input[value*="ia"] {
+            background-color: violet;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+        <h1>Tipos de CSS</h1>
+
+        <!-- Seleccionado por "main div" -->
+        <div>Elemento div (Seleccionado por "main div")</div>
+
+        <!-- Seleccionado por "main div" -->
+        <div class="elementoVioleta">Elemento div (Seleccionado por "main div")</div>
+
+        <!-- Seleccionado por "main div" -->
+        <div width="400px">Elemento div (Seleccionado por "main div")</div>
+
+        <!-- Seleccionado por "main div" -->
+        <div>
+            Elemento div (Seleccionado por "main div")
+            <!-- Seleccionado por "main div" -->
+            <div>Elemento div hijo (Seleccionado por "main div")</div>
+        </div>
+    </main>
+
+    <!-- No tiene estilos CSS específicos -->
+
+    <div>Elemento div</div>
+
+    <!-- No tiene estilos CSS específicos -->
+
+    <h2>Lorem</h2>
+    <h3>Lorem</h3>
+    <h2>Lorem</h2>
+    <h3>Lorem</h3>
+    <h2>Lorem</h2>
+    <h3>Lorem</h3>
+    <h2>Lorem</h2>
+    <h3>Lorem</h3>
+
+    <!-- Seleccionado por "input[value*='ia']" -->
+    <input type="text" value="maria" style="background-color: violet;">
+
+    <!-- Seleccionado por "input[value*='ia']" -->
+    <input type="text" value="jose maria" style="background-color: violet;">
+
+    <!-- No seleccionado por los estilos CSS -->
+    <input type="text" value="mariana">
+</body>
+
+</html>
+
+
