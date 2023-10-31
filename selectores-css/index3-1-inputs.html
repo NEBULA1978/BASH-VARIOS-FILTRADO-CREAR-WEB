@@ -7,11 +7,11 @@
     <style>
         /* Selectores combinatorios */
         main div {
-            background-color: red;
+            background-color: aqua; /* Changed to aqua for better readability */
         }
 
         main > div {
-            background-color: green;
+            background-color: rgb(42, 54, 42);
         }
 
         main + div {
@@ -23,6 +23,22 @@
         }
 
         /* Selectores avanzados */
+        [value*="maria"] {
+            font-size: 24px;
+        }
+
+        [value|="maria"] {
+            background-color: violet;
+        }
+
+        [value^="maria"] {
+            background-color: violet;
+        }
+
+        [value$="maria"] {
+            background-color: violet;
+        }
+
         [value*="ia"] {
             background-color: violet;
         }
@@ -37,7 +53,7 @@
                 <h3>Ejemplo 1: Todos los elementos div que están dentro del main</h3>
                 <pre>
                     main div {
-                        background-color: red;
+                        background-color: aqua; /* Changed to aqua for better readability */
                     }
                 </pre>
                 <div id="div1">Elemento div</div>
@@ -46,7 +62,7 @@
                 <h3>Ejemplo 2: Cualquier div que esté dentro de la etiqueta main justo después</h3>
                 <pre>
                     main > div {
-                        background-color: green;
+                        background-color: rgb(42, 54, 42);
                     }
                 </pre>
                 <div class="elementoVioleta">Elemento div</div>
@@ -69,26 +85,55 @@
                 </pre>
                 <h2>Lorem</h2>
                 <h3>Lorem</h3>
-                <h2>Lorem</h2>
-                <h3>Lorem</h3>
             </div>
         </section>
 
         <section>
             <h2>Selectores avanzados</h2>
             <div>
-                <h3>Ejemplo 5: Seleccionar elementos cuyo atributo 'value' contiene la palabra "ia"</h3>
+                <h3>Ejemplo 5: Seleccionar elementos cuyo atributo 'value' contiene la palabra "maria"</h3>
+                <pre>
+                    [value*="maria"] {
+                        font-size: 24px;
+                    }
+                </pre>
+                <input type="text" value="maria">
+            </div>
+            <div>
+                <h3>Ejemplo 6: Seleccionar elementos cuyo atributo 'value' comienza exactamente con el valor "maria"</h3>
+                <pre>
+                    [value|="maria"] {
+                        background-color: violet;
+                    }
+                </pre>
+                <input type="text" value="jose maria">
+            </div>
+            <div>
+                <h3>Ejemplo 7: Seleccionar elementos cuyo atributo 'value' comienza con el valor "maria"</h3>
+                <pre>
+                    [value^="maria"] {
+                        background-color: violet;
+                    }
+                </pre>
+                <input type="text" value="maria123">
+            </div>
+            <div>
+                <h3>Ejemplo 8: Seleccionar elementos cuyo atributo 'value' termina con "maria"</h3>
+                <pre>
+                    [value$="maria"] {
+                        background-color: violet;
+                    }
+                </pre>
+                <input type="text" value="123maria">
+            </div>
+            <div>
+                <h3>Ejemplo 9: Seleccionar elementos cuyo atributo 'value' incluye el valor "ia"</h3>
                 <pre>
                     [value*="ia"] {
                         background-color: violet;
                     }
                 </pre>
-                <input type="text" value="maria" style="background-color: violet;">
-            </div>
-            <div>
-                <h3>Ejemplo 6: No seleccionado por los estilos CSS</h3>
-                <p>Este input no es seleccionado por los estilos CSS porque su valor no contiene "ia".</p>
-                <input type="text" value="mariana">
+                <input type="text" value="jose maria">
             </div>
         </section>
     </main>
