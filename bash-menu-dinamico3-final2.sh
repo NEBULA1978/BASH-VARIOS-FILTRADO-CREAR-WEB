@@ -11,6 +11,7 @@ while true; do
     echo "6. Ver archivos en la carpeta actual."
     echo "7. Buscar palabra en archivos de la carpeta actual."
     echo "9. Comentar lineas del archivo indicado"
+    echo "10. Sustituir palabra de archivo texto-sustituir-palabra.txt que le diga"
     echo "8. Salir"
     read -p "Seleccione una opción (1/2/3/4/5/6/7/8): " choice
 
@@ -87,6 +88,12 @@ while true; do
     fi
     ;;
 
+
+10)
+    read -p "Introduzca la nueva palabra para reemplazar 'Telegram' en la línea 2: " new_word
+    sed -i '2s/Telegram/'"$new_word"'/' texto-sustituir-palabra.txt
+    echo "Palabra reemplazada con éxito en la línea 2."
+    ;;
 
     8)
         echo "Saliendo del menú."

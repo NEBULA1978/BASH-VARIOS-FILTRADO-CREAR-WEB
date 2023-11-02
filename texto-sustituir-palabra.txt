@@ -1,0 +1,10 @@
+
+hola
+USo del comando awk en Linux y Unix
+Uso del comando AWK en Linux y UNIX con ejemplos
+Publicado porJoan Carles
+10 octubre, 2021
+2 comentariosen Uso del comando AWK en Linux y UNIX con ejemplos
+Home » Linux » Explicación y ejemplos de uso del comando awk
+
+
