@@ -1,13 +1,11 @@
-Archivo: ./texto-buscar.txt Línea: 12 Texto: Uso del comando AWK en Linux y UNIX con ejemplos
-Archivo: ./texto-buscar.txt Línea: 15 Texto: 2 comentariosen Uso del comando AWK en Linux y UNIX con ejemplos
-Archivo: ./pruebas-primeras/texto-buscar.txt Línea: 12 Texto: Uso del comando AWK en Linux y UNIX con ejemplos
-Archivo: ./pruebas-primeras/texto-buscar.txt Línea: 15 Texto: 2 comentariosen Uso del comando AWK en Linux y UNIX con ejemplos
-Archivo: ./pruebas-primeras/bash-busqueda.sh Línea: 19 Texto: # Uso del comando AWK en Linux y UNIX con ejemplos
-Archivo: ./pruebas-primeras/bash-busqueda.sh Línea: 22 Texto: # 2 comentariosen Uso del comando AWK en Linux y UNIX con ejemplos
+#Archivo: ./texto-buscar.txt Línea: 12 Texto: Uso del comando AWK en Linux y UNIX con ejemplos
+#Archivo: ./texto-buscar.txt Línea: 15 Texto: 2 comentariosen Uso del comando AWK en Linux y UNIX con ejemplos
+#Archivo: ./pruebas-primeras/texto-buscar.txt Línea: 12 Texto: Uso del comando AWK en Linux y UNIX con ejemplos
+#Archivo: ./pruebas-primeras/texto-buscar.txt Línea: 15 Texto: 2 comentariosen Uso del comando AWK en Linux y UNIX con ejemplos
+#Archivo: ./pruebas-primeras/bash-busqueda.sh Línea: 19 Texto: # Uso del comando AWK en Linux y UNIX con ejemplos
+#Archivo: ./pruebas-primeras/bash-busqueda.sh Línea: 22 Texto: # 2 comentariosen Uso del comando AWK en Linux y UNIX con ejemplos
 Archivo: ./pruebas-primeras/bash-busqueda.sh Línea: 51 Texto: # Uso del comando AWK en Linux y UNIX con ejemplos                 
 Archivo: ./pruebas-primeras/bash-busqueda.sh Línea: 54 Texto: # 2 comentariosen Uso del comando AWK en Linux y UNIX con ejemplos               
 Archivo: ./prueba2/texto-buscar.txt Línea: 12 Texto: Uso del comando AWK en Linux y UNIX con ejemplos
 Archivo: ./prueba2/texto-buscar.txt Línea: 15 Texto: 2 comentariosen Uso del comando AWK en Linux y UNIX con ejemplos
-Archivo: ./prueba2/apuntes.txt Línea: 205 Texto: S.ficheros          bloques de 1K   Usados Disponibles Uso% Montado en
-Archivo: ./prueba2/apuntes.txt Línea: 543 Texto: S.ficheros     bloques de 1K    Usados Disponibles Uso% Montado en
-Archivo: ./prueba2/apuntes.txt Línea: 616 Texto: S.ficheros     Tamaño Usados  Disp Uso% Montado en
+Saltar al contenido

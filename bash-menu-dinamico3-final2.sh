@@ -10,6 +10,7 @@ while true; do
     echo "5. Eliminar una línea de texto-introducir.txt."
     echo "6. Ver archivos en la carpeta actual."
     echo "7. Buscar palabra en archivos de la carpeta actual."
+    echo "9. Comentar lineas del archivo indicado"
     echo "8. Salir"
     read -p "Seleccione una opción (1/2/3/4/5/6/7/8): " choice
 
@@ -24,7 +25,7 @@ while true; do
         if [ -f texto-buscar.txt ]; then
             line=$(sed -n "${line_number}p" texto-buscar.txt)
             if [ -n "$line" ]; then
-                echo "$line" >> texto-introducir.txt
+                echo "$line" >>texto-introducir.txt
                 echo "Línea copiada exitosamente."
             else
                 echo "Número de línea no válido."
@@ -66,8 +67,27 @@ while true; do
         read -p "Introduzca el nombre del archivo para guardar los resultados: " output_file
         grep -rnw . -e "$word_in_files" | awk -F: '{print "Archivo:", $1, "Línea:", $2, "Texto:", $3}' >"$output_file"
         echo "Resultados de la búsqueda por palabra '$word_in_files' en la carpeta actual se han guardado en '$output_file'."
-        
+
         ;;
+9)
+    read -p "Introduzca el nombre del archivo al que desea añadir comentarios: " file_to_comment
+    read -p "Introduzca el número de la primera línea para agregar <!--: " start_line
+    read -p "Introduzca el número de la línea para agregar -->: " end_line
+
+    if [ -f "$file_to_comment" ]; then
+        if [ "$end_line" -lt "$start_line" ]; then
+            echo "El número de la última línea debe ser mayor que el número de la primera línea."
+        else
+            sed -i "${start_line}s|^|<!-- |" "$file_to_comment"
+            sed -i "${end_line}s|$| -->|" "$file_to_comment"
+            echo "Se han agregado los comentarios en el archivo $file_to_comment."
+        fi
+    else
+        echo "El archivo $file_to_comment no existe."
+    fi
+    ;;
+
+
     8)
         echo "Saliendo del menú."
         exit 0
