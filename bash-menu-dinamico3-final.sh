@@ -17,11 +17,16 @@ while true; do
     1)
         cat -n texto-buscar.txt
         ;;
-    2)
-        read -p "Introduzca el número de línea a copiar: " line_number
-        sed -e "$((line_number + 1))i\\" -e "$(sed -n "${line_number}{p;q}" texto-buscar.txt)" texto-introducir.txt >texto-introducir-temp.txt && mv texto-introducir-temp.txt texto-introducir.txt
-        echo "Línea copiada exitosamente."
-        ;;
+2)
+    read -p "Introduzca el número de línea a copiar: " line_number
+    read -p "Introduzca el número de línea donde desea pegar el texto: " paste_line_number
+
+    copied_text=$(sed -n "${line_number}p" texto-buscar.txt)
+    sed -i "${paste_line_number}i ${copied_text}" texto-introducir.txt
+
+    echo "Línea copiada exitosamente."
+    ;;
+
     3)
         read -p "Introduzca el nombre del archivo en el que buscar la palabra: " file_to_search
         read -p "Introduzca la palabra a buscar: " word_to_search
