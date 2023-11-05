@@ -1,8 +1,8 @@
-Saltar al contenido
+<!-- Saltar al contenido
 geekland Blog de Tecnología
 Contacto Indice El Autor Buscar
 Twitter
- 
+  -->
 Reddit
  
 RSS
