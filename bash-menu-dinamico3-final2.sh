@@ -17,9 +17,25 @@ while true; do
 
     case $choice in
     1)
-        echo "Contenido de texto-buscar.txt con números de línea:"
-        nl texto-buscar.txt | more
-        read -n 1 -s -r -p "Presione cualquier tecla para continuar..."
+        echo "Ver lineas del archivo elegido en la carpeta actual:"
+        # ls -R
+        # read -p "Introduzca el nnombre del archivo: " texto-buscar.txt
+        # echo "Contenido de texto-buscar.txt con números de línea:"
+        # nl texto-buscar.txt
+        # cat -n "$(texto-buscar.txt)"
+        # read -n 1 -s -r -p "Presione cualquier tecla para continuar..."
+        # ;;
+        echo "Archivos en la carpeta actual:"
+        ls
+        read -p "Introduzca el nombre del archivo: " file_to_display
+
+        if [ -f "$file_to_display" ]; then
+            echo "Contenido de $file_to_display con números de línea:"
+            nl "$file_to_display"
+            # cat -n "$(file_to_display)"
+        else
+            echo "El archivo $file_to_display no existe."
+        fi
         ;;
     2)
         read -p "Introduzca el número de línea a copiar: " line_number
@@ -70,30 +86,36 @@ while true; do
         echo "Resultados de la búsqueda por palabra '$word_in_files' en la carpeta actual se han guardado en '$output_file'."
 
         ;;
-9)
-    read -p "Introduzca el nombre del archivo al que desea añadir comentarios: " file_to_comment
-    read -p "Introduzca el número de la primera línea para agregar <!--: " start_line
-    read -p "Introduzca el número de la línea para agregar -->: " end_line
+    9)
+        read -p "Introduzca el nombre del archivo al que desea añadir comentarios: " file_to_comment
+        read -p "Introduzca el número de la primera línea para agregar <!--: " start_line
+        read -p "Introduzca el número de la línea para agregar -->: " end_line
 
-    if [ -f "$file_to_comment" ]; then
-        if [ "$end_line" -lt "$start_line" ]; then
-            echo "El número de la última línea debe ser mayor que el número de la primera línea."
+        if [ -f "$file_to_comment" ]; then
+            if [ "$end_line" -lt "$start_line" ]; then
+                echo "El número de la última línea debe ser mayor que el número de la primera línea."
+            else
+                sed -i "${start_line}s|^|<!-- |" "$file_to_comment"
+                sed -i "${end_line}s|$| -->|" "$file_to_comment"
+                echo "Se han agregado los comentarios en el archivo $file_to_comment."
+            fi
         else
-            sed -i "${start_line}s|^|<!-- |" "$file_to_comment"
-            sed -i "${end_line}s|$| -->|" "$file_to_comment"
-            echo "Se han agregado los comentarios en el archivo $file_to_comment."
+            echo "El archivo $file_to_comment no existe."
         fi
-    else
-        echo "El archivo $file_to_comment no existe."
-    fi
-    ;;
+        ;;
 
+    10)
+        current_word=$(awk 'NR==2{match($0, /<.*>(.*)<.*/, arr); print arr[1]}' texto-sustituir-palabra.txt)
 
-10)
-    read -p "Introduzca la nueva palabra para reemplazar 'Telegram' en la línea 2: " new_word
-    sed -i '2s/Telegram/'"$new_word"'/' texto-sustituir-palabra.txt
-    echo "Palabra reemplazada con éxito en la línea 2."
-    ;;
+        read -p "Introduzca una nueva palabra para reemplazar '$current_word': " new_word
+
+        if [ -z "$new_word" ]; then
+            new_word=$current_word
+        else
+            sed -i "2s/$current_word/$new_word/" texto-sustituir-palabra.txt
+            echo "Palabra reemplazada con éxito en la línea 2."
+        fi
+        ;;
 
     8)
         echo "Saliendo del menú."

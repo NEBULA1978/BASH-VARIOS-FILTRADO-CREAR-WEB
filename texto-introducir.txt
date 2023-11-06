@@ -9,3 +9,4 @@ Archivo: ./pruebas-primeras/bash-busqueda.sh Línea: 54 Texto: # 2 comentariosen
 Archivo: ./prueba2/texto-buscar.txt Línea: 12 Texto: Uso del comando AWK en Linux y UNIX con ejemplos
 Archivo: ./prueba2/texto-buscar.txt Línea: 15 Texto: 2 comentariosen Uso del comando AWK en Linux y UNIX con ejemplos
 Saltar al contenido
+Reddit
