@@ -83,7 +83,7 @@ while true; do
   read -n 1 -r OPTION
   echo ""  # Agrega un salto de línea para que la siguiente salida no se mezcle
 
-  case $OPTION in
+case $OPTION in
     1)
       generate_example "grid" "1fr 1fr 1fr" "1fr 1fr 1fr" "center" "center" "10px"
       ;;
@@ -92,7 +92,13 @@ while true; do
       generate_example "grid" "50px 100px 50px" "1fr 2fr 1fr" "start" "end" "5px"
       ;;
 
-    # puedes definir más ejemplos predefinidos aquí
+    3)
+      generate_example "grid" "100px 200px 100px" "repeat(3, 1fr)" "end" "center" "15px"
+      ;;
+
+    4)
+      generate_example "grid" "200px 100px 200px" "1fr 2fr 1fr" "start" "stretch" "20px"
+      ;;
 
     5)
       get_custom_values
@@ -102,7 +108,6 @@ while true; do
     6)
       generate_example "inline-grid" "1fr" "1fr 1fr 1fr" "center" "center" "10px"
       ;;
-
     7)
       echo "Has seleccionado la opción 7."
       # Agrega aquí la acción que deseas para la opción 7

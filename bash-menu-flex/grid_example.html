@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.grid-container {
+  display: inline-grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  gap: 10px;
+  height: 300px; /* Ajusta la altura según sea necesario */
+  border: 1px solid black; /* Agrega un borde para visualizar el contenedor */
+}
+
+.grid-item {
+  background-color: lightgray; /* Color de fondo de los elementos */
+}
+</style>
+</head>
+<body>
+<div class="grid-container">
+  <div class="grid-item">1</div>
+  <div class="grid-item">2</div>
+  <div class="grid-item">3</div>
+</div>
+</body>
+</html>
