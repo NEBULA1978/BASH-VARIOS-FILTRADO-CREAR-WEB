@@ -3,26 +3,29 @@
 <head>
 <style>
 .grid-container {
-  display: inline-grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   justify-items: center;
   align-items: center;
   gap: 10px;
-  height: 300px; /* Ajusta la altura según sea necesario */
-  border: 1px solid black; /* Agrega un borde para visualizar el contenedor */
+  height: 300px;
+  border: 1px solid black;
 }
 
 .grid-item {
-  background-color: lightgray; /* Color de fondo de los elementos */
+  background-color: lightgray;
+  padding: 10px;
+  border: 1px solid black;
+  margin: 5px;
 }
 </style>
 </head>
 <body>
 <div class="grid-container">
-  <div class="grid-item">1</div>
-  <div class="grid-item">2</div>
-  <div class="grid-item">3</div>
+  <div class="grid-item">Elemento 1</div>
+  <div class="grid-item">Elemento 2</div>
+  <div class="grid-item">Elemento 3</div>
 </div>
 </body>
 </html>
