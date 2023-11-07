@@ -1,30 +1,47 @@
 #!/bin/bash
 
+declare -a OPTIONS=(
+  "Introduce el tipo de display para div (por ejemplo, 'flex', 'block', 'inline-flex', etc.):"
+  "Introduce la dirección de los elementos flexibles ('row', 'row-reverse', 'column', 'column-reverse'):"
+  "Introduce la propiedad flex-wrap ('no-wrap', 'wrap', 'wrap-reverse'):"
+  "Introduce la propiedad justify-content ('flex-start', 'flex-end', 'center', 'space-between', 'space-around'):"
+  "Introduce la propiedad align-items ('flex-start', 'flex-end', 'center', 'stretch', 'baseline'):"
+  "Introduce la propiedad align-content ('flex-start', 'flex-end', 'center', 'space-between', 'space-around', 'stretch'):"
+)
+
+# Variables inicializadas con valores por defecto
+GRID_DISPLAY="flex"
+FLEX_DIRECTION="row"
+FLEX_WRAP="nowrap"
+JUSTIFY_CONTENT="flex-start"
+ALIGN_ITEMS="stretch"
+ALIGN_CONTENT="flex-start"
+
 # Función para solicitar valores personalizados
 get_custom_values() {
-  echo "Introduce el tipo de display para div (por ejemplo, 'flex', 'block', 'inline-flex', etc.):"
-  read -r GRID_DISPLAY
-  GRID_DISPLAY=${GRID_DISPLAY:-flex} # Valor por defecto si no se introduce ninguno
+  for i in "${!OPTIONS[@]}"; do
+    echo "$((i + 1)). ${OPTIONS[i]}"
+  done
 
-  echo "Introduce la dirección de los elementos flexibles ('row', 'row-reverse', 'column', 'column-reverse'):"
-  read -r FLEX_DIRECTION
-  FLEX_DIRECTION=${FLEX_DIRECTION:-row} # Valor por defecto si no se introduce ninguno
+  read -rp "Elige el número de la opción que deseas cambiar: " OPTION_NUM
+  if [[ $OPTION_NUM -ge 1 && $OPTION_NUM -le ${#OPTIONS[@]} ]]; then
+    read -rp "${OPTIONS[OPTION_NUM - 1]}" USER_INPUT
 
-  echo "Introduce la propiedad flex-wrap ('no-wrap', 'wrap', 'wrap-reverse'):"
-  read -r FLEX_WRAP
-  FLEX_WRAP=${FLEX_WRAP:-nowrap} # Valor por defecto si no se introduce ninguno
+    case $OPTION_NUM in
+      1) GRID_DISPLAY=$USER_INPUT ;;
+      2) FLEX_DIRECTION=$USER_INPUT ;;
+      3) FLEX_WRAP=$USER_INPUT ;;
+      4) JUSTIFY_CONTENT=$USER_INPUT ;;
+      5) ALIGN_ITEMS=$USER_INPUT ;;
+      6) ALIGN_CONTENT=$USER_INPUT ;;
+    esac
 
-  echo "Introduce la propiedad justify-content ('flex-start', 'flex-end', 'center', 'space-between', 'space-around'):"
-  read -r JUSTIFY_CONTENT
-  JUSTIFY_CONTENT=${JUSTIFY_CONTENT:-flex-start} # Valor por defecto si no se introduce ninguno
-
-  echo "Introduce la propiedad align-items ('flex-start', 'flex-end', 'center', 'stretch', 'baseline'):"
-  read -r ALIGN_ITEMS
-  ALIGN_ITEMS=${ALIGN_ITEMS:-stretch} # Valor por defecto si no se introduce ninguno
-
-  echo "Introduce la propiedad align-content ('flex-start', 'flex-end', 'center', 'space-between', 'space-around', 'stretch'):"
-  read -r ALIGN_CONTENT
-  ALIGN_CONTENT=${ALIGN_CONTENT:-flex-start} # Valor por defecto si no se introduce ninguno
+    generate_html
+    echo "Archivo HTML generado como 'flexbox_example.html'. Presiona Enter para continuar o Ctrl+C para salir."
+    read -r
+  else
+    echo "Opción inválida."
+  fi
 }
 
 # Función para generar el archivo HTML con CSS personalizado
