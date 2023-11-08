@@ -86,23 +86,50 @@ while true; do
         echo "Resultados de la búsqueda por palabra '$word_in_files' en la carpeta actual se han guardado en '$output_file'."
 
         ;;
-    9)
-        read -p "Introduzca el nombre del archivo al que desea añadir comentarios: " file_to_comment
-        read -p "Introduzca el número de la primera línea para agregar <!--: " start_line
-        read -p "Introduzca el número de la línea para agregar -->: " end_line
+ 9)
+    read -p "Introduzca el tipo de archivo (html/css/js): " file_type
+    read -p "Introduzca el nombre del archivo al que desea añadir comentarios: " file_to_comment
+    read -p "Introduzca el número de la primera línea para agregar el comentario: " start_line
+    read -p "Introduzca el número de la línea para finalizar el comentario: " end_line
 
-        if [ -f "$file_to_comment" ]; then
-            if [ "$end_line" -lt "$start_line" ]; then
-                echo "El número de la última línea debe ser mayor que el número de la primera línea."
-            else
-                sed -i "${start_line}s|^|<!-- |" "$file_to_comment"
-                sed -i "${end_line}s|$| -->|" "$file_to_comment"
-                echo "Se han agregado los comentarios en el archivo $file_to_comment."
-            fi
-        else
-            echo "El archivo $file_to_comment no existe."
-        fi
-        ;;
+    if [ -f "$file_to_comment" ]; then
+        case "$file_type" in
+            "html")
+                if [ "$end_line" -lt "$start_line" ]; then
+                    echo "El número de la última línea debe ser mayor que el número de la primera línea."
+                else
+                    sed -i "${start_line}s|^|<!-- |" "$file_to_comment"
+                    sed -i "${end_line}s|$| -->|" "$file_to_comment"
+                    echo "Se han agregado comentarios en el archivo $file_to_comment."
+                fi
+                ;;
+            "css")
+                if [ "$end_line" -lt "$start_line" ]; then
+                    echo "El número de la última línea debe ser mayor que el número de la primera línea."
+                else
+                    sed -i "${start_line}s|^|/* |" "$file_to_comment"
+                    sed -i "${end_line}s|$| */|" "$file_to_comment"
+                    echo "Se han agregado comentarios en el archivo $file_to_comment."
+                fi
+                ;;
+            "js")
+                if [ "$end_line" -lt "$start_line" ]; then
+                    echo "El número de la última línea debe ser mayor que el número de la primera línea."
+                else
+                    sed -i "${start_line}s|^|// |" "$file_to_comment"
+                    sed -i "${end_line}s|$| |" "$file_to_comment"
+                    echo "Se han agregado comentarios en el archivo $file_to_comment."
+                fi
+                ;;
+            *)
+                echo "Tipo de archivo no compatible. Use 'html', 'css' o 'js'."
+                ;;
+        esac
+    else
+        echo "El archivo $file_to_comment no existe."
+    fi
+    ;;
+
 
     10)
         current_word=$(awk 'NR==2{match($0, /<.*>(.*)<.*/, arr); print arr[1]}' texto-sustituir-palabra.txt)
