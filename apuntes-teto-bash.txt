@@ -1,0 +1,261 @@
+Bash nos permite hacer millones de cosas. Es más, como nos permite hacer llamadas a otros programas, colocando las entradas y salidas adecuadas podremos producir cualquier resultado. Nos viene muy bien poder encadenar varios comandos, como en este tutorial en el que la salida de echo la pasamos como entrada de tr. Pero en este tutorial quiero hablar de operaciones que podemos hacer directamente en Bash, sin ningún programa extra o dependencia. Además, su realización será mucho más rápida ya que no tenemos que cargar en memoria un programa. Esto nos resultará de gran ayuda si utilizamos sistemas empotrados como Raspberry PI, o cualquier dispositivo con chips o almacenamiento reducidos. 
+
+
+Eso sí, para muchos ejemplos necesitaremos Bash 4.x (aunque ya tiene unos años, la versión salió en 2009)
+¡Manos a la obra!
+
+1 - Reemplazar subcadenas
+
+Aunque existen herramientas como sed o awk que, no estoy diciendo que no las usemos, porque son herramientas muy potentes. Cuando se trata de hacer un simple reemplazo de un texto por otro dentro de un texto más grande. O lo que es lo mismo, reemplazar subcadenas dentro de una cadena, podemos hacer lo siguiente:
+
+ 
+texto="Los mejores tutoriales sobre Windows en WindowsCenter"
+echo ${texto//Windows/Linux}
+ 
+
+La clave está en tener el texto en una variable y luego hacer
+
+ 
+echo ${VARIABLE//Cadena a buscar/Cadena que reemplaza}
+ 
+
+O también podemos hacer lo siguiente:
+
+ 
+texto="No hables de Linux en LinuxCenter"
+echo ${texto/Linux/Windows}
+ 
+
+Fijaos que ahora solo hay una barra (/) en lugar de dos. Con las sustituciones podemos hacer muchas cosas, incluso utilizar expresiones regulares.
+2 – Contar caracteres de una cadena
+
+Es muy común hacer lo siguiente:
+
+ 
+texto="cadena de caracteres muy muy larga"
+echo $texto | wc -m
+ 
+
+Pero podemos hacerlo sin llamar a wc (cuidado, también podemos utilizar -c, pero tendremos problemas con caracteres especiales) de la siguiente manera:
+
+ 
+
+ 
+texto="cadena de caracteres muy muy larga"
+echo ${#texto}
+ 
+
+Una nota, si comparáis los dos resultados, saldrán distintos, el primer método tendrá un carácter más. Eso es porque contamos el "intro" o mejor dicho, el retorno de carro, cuando utilizamos la primera forma. También podríamos hacerlo así:
+
+ 
+texto="cadena de caracteres muy muy larga"
+echo -n $texto | wc -m
+ 
+
+ 
+3 – Recortar cadenas
+
+ 
+
+¿Qué ocurre si queremos sacar una subcadena dentro del texto? Por ejemplo, tenemos esta cadena de texto:"Los mejores tutoriales sobre Linux en LinuxCenter"
+Y queremos extraer 10 letras desde el carácter número 12, podemos hacer:
+
+ 
+texto="Los mejores tutoriales sobre Linux en LinuxCenter"
+echo ${texto:12:10}
+ 
+
+O si queremos sacar desde el carácter 37 hasta el final, podemos hacer:
+
+ 
+texto="Los mejores tutoriales sobre Linux en LinuxCenter"
+echo ${texto:37}
+ 
+
+ 
+4 - Saber si una subcadena existe
+
+ 
+
+Si tengo este texto: "Esto es un pequeño tutorial de Linux en el que hablo de Bash."
+Y quiero saber si una subcadena está presente, puedo hacer lo siguiente:
+
+ 
+texto="Esto es un pequeño tutorial de Linux en el que hablo de Bash."
+if [[ "$texto" == *"Windows"* ]]; then    
+  echo "ESTÁ"; 
+else
+  echo "NO ESTÁ"; 
+fi
+ 
+
+ 
+5 - Extraer la ruta de un archivo
+
+ 
+
+Si tenemos un nombre de archivo con la ruta completa y queremos extraer el directorio donde está localizado el fichero podemos hacer lo siguiente:
+
+ 
+
+ 
+fichero="/usr/share/icons/hicolor/64x64/mimetypes/libreoffice-oasis-data.png"
+echo "${fichero%/*}"
+ 
+
+
+En este caso obtendremos: /usr/share/icons/hicolor/64x64/mimetypes/ . En teoría estamos eliminando de la cadena desde el final hasta la última / y devolvemos lo que nos queda. Al final obtenemos lo mismo que haciendo:
+
+ 
+
+ 
+dirname /usr/share/icons/hicolor/64x64/mimetypes/libreoffice-oasis-data.png
+ 
+
+ 
+6 – Extraer el archivo sin la ruta
+
+ 
+
+Ahora si lo que queremos es sacar el nombre de archivo libreoffice-oasis-data.png sin la ruta, igual que hacemos con el comando basename. Podemos hacer:
+
+ 
+fichero="/usr/share/icons/hicolor/64x64/mimetypes/libreoffice-oasis-data.png"
+echo "${fichero##*/}"
+ 
+
+
+En este caso, eliminamos todos los caracteres desde el principio hasta la última / que encontramos.
+
+ 
+7 – Extraer el nombre de archivo sin la extensión
+
+ 
+
+De la misma forma que hicimos para sacar la ruta del archivo, vamos a extraer la extensión de un archivo, de la siguiente manera:
+
+ 
+fichero="/home/usuario/backups/2018_11_13.tar.gz"
+echo "${fichero%%.*}"
+ 
+
+ 
+8 – Sacar solo la extensión del archivo
+
+ 
+
+Ahora queremos quedarnos con la extensión, para ello, propongo dos casos. En el primero, sacaremos todo lo que hay detrás del primer punto del archivo:
+
+ 
+fichero="/home/usuario/backups/2018_11_13.tar.gz"
+echo ${fichero##*.}
+ 
+
+
+Aunque también puede ser que solo necesitemos la última extensión (desde el último punto hasta el final):
+
+ 
+fichero="/home/usuario/backups/2018_11_13.tar.gz"
+echo ${fichero#*.}
+ 
+
+ 
+9 - Conocer la posición de una palabra dentro de una cadena
+
+Queremos saber en qué letra se encuentra la palabra Linux dentro de la frase "Esto es un pequeño tutorial de Linux en el que hablo de Bash." así que hacemos lo siguiente:
+
+ 
+texto="Esto es un pequeño tutorial de Linux en el que hablo de Bash."
+tmp="${texto%%Linux*}"
+echo ${#tmp}
+ 
+
+
+Si os fijáis, es parecido a lo que hacíamos para extraer el nombre de archivo (solo que ahora en lugar de un punto, buscamos la palabra Linux, y luego contamos las letras de la cadena temporal generada. Incluso la palabra a buscar puede ser otra variable. Eso sí, tendremos un problema cuando la palabra no exista, que nos devolverá la posición del final de la cadena, entonces podemos hacer lo siguiente:
+
+ 
+busca="Linux"texto="Esto es un pequeño tutorial de Linux en el que hablo de Bash."
+tmp="${texto%%$busca*}"
+[[ "$texto" = "$tmp" ]] && echo -1 || echo ${#tmp}
+ 
+
+Con lo que si el texto no se encuentra, devuelve -1
+
+Bonus
+
+Por último, quiero dejaros para copiar y pegar todo esto en forma de funciones para poder incorporar fácilmente a vuestros scripts estas utilidades:
+
+#!/bin/bash
+function replace()
+{
+    local text="$1"
+    local busc="$2"
+    local repl="$3"
+    echo ${text//$busc/$repl}
+}
+function replace_once()
+{
+    local text="$1"
+    local busc="$2"
+    local repl="$3"
+    echo ${text/$busc/$repl}
+}
+function longitud()
+{
+    local text="$1"
+    echo ${#text}
+}
+function recorta()
+{
+    local text="$1"
+    local desde=$2
+    local hasta=$3
+    [ -z $hasta ] && echo ${text:$desde} || echo ${text:$desde:$hasta}
+}
+function encuentra()
+{
+    local text="$1"
+    local subt="$2"
+    [[ "$texto" == *"Windows"* ]] && true || false
+}
+function ruta_archivo()
+{
+    local fich="$1"
+    echo "${fich%/*}"
+}
+function base_archivo()
+{
+    local fich="$1"
+    echo "${fich##*/}"
+}
+function extension_archivo()
+{
+    local fich="$1"
+    echo ${fich##*.}
+}
+function extension_archivo2()
+{
+    local fich="$1"
+    echo ${fich#*.}
+}
+function posicion_cadena()
+{
+    local text="$1"
+    local subc="$2"
+    tmp="${text%%$subc*}"
+    [[ "$texto" = "$tmp" ]] && echo -1 || echo ${#tmp}
+}
+
+Ahora Probamos las funciones
+
+replace "I love Windows, forever Windows" "Windows" "Linux"replace "I love Windows, forever Windows" "Windows" "Linux"
+replace_once "I love Windows. Windows never closes unexpectedly" "Windows" "Linux"
+longitud "Esta es una cadena muy larga que no se cuantas letras contiene"
+recorta "Desde que uso GNU/Linux soy más feliz" 14 9
+recorta "Desde que uso GNU/Linux soy más feliz" 24
+if encuentra "$(uname)" "Linux"; then echo "Buen sistema el tuyo!"; fi
+ruta_archivo "/home/usuario/proyectos/github/tutoriales/cadenas_bash.txt"
+base_archivo "/home/usuario/proyectos/github/tutoriales/cadenas_bash.txt"
+extension_archivo "/home/usuario/proyectos/github/tutoriales/cadenas_bash.tar.bz2"
+extension_archivo2 "/home/usuario/proyectos/github/tutoriales/cadenas_bash.tar.bz2"
+posicion_cadena "No sé dónde está Linux en todo este texto" "Linux"
