@@ -3,17 +3,17 @@
 while true; do
     clear
     echo "Menú:"
-    echo "1. Mostrar contenido de texto-buscar.txt con números de línea."
-    echo "2. Copiar una línea de texto-buscar.txt a texto-introducir.txt."
+    echo "1. Mostrar contenido de un archivo con números de línea."
+    echo "2. Copiar un rango de líneas de un archivo a otro."
     echo "3. Buscar una palabra en un archivo."
     echo "4. Modificar el título en texto-introducir.txt."
     echo "5. Eliminar una línea de texto-introducir.txt."
     echo "6. Ver archivos en la carpeta actual."
     echo "7. Buscar palabra en archivos de la carpeta actual."
-    echo "9. Comentar lineas del archivo indicado"
-    echo "10. Sustituir palabra de archivo texto-sustituir-palabra.txt que le diga"
+    echo "9. Añadir comentarios a un archivo HTML/CSS/JS."
+    echo "10. Sustituir palabra en archivo texto-sustituir-palabra.txt."
     echo "8. Salir"
-    read -p "Seleccione una opción (1/2/3/4/5/6/7/8): " choice
+    read -p "Seleccione una opción (1/2/3/4/5/6/7/8/9/10): " choice
 
     case $choice in
     1)
@@ -38,33 +38,39 @@ while true; do
         fi
         ;;
     2)
-        read -p "Introduzca el número de línea a copiar: " line_number
-        if [ -f texto-buscar.txt ]; then
-            line=$(sed -n "${line_number}p" texto-buscar.txt)
-            if [ -n "$line" ]; then
-                echo "$line" >>texto-introducir.txt
-                echo "Línea copiada exitosamente."
-            else
-                echo "Número de línea no válido."
-            fi
-        else
-            echo "El archivo texto-buscar.txt no existe."
-        fi
+        read -p "Introduzca el nombre del archivo de búsqueda: " buscar_file
+        read -p "Introduzca el nombre del archivo de destino: " destino_file
+        read -p "Introduzca el número de la primera línea del rango a copiar: " start_line
+        read -p "Introduzca el número de la última línea del rango a copiar: " end_line
+        read -p "Introduzca el número de línea en el archivo de destino donde desea introducir la copia: " destination_line
+
+        # Crear un respaldo del archivo de destino
+        cp "$destino_file" "$destino_file.bak"
+
+        # Copiar el rango de líneas al archivo temporal
+        sed -n "${start_line},${end_line}p" "$buscar_file" >temp_copy.txt
+
+        # Insertar el contenido copiado en el archivo de destino
+        head -n $((destination_line - 1)) "$destino_file" >temp_head.txt
+        tail -n +$destination_line "$destino_file" >temp_tail.txt
+        cat temp_head.txt temp_copy.txt temp_tail.txt >"$destino_file"
+
+        rm temp_copy.txt temp_head.txt temp_tail.txt
+
+        echo "Rango de líneas copiado exitosamente en la línea $destination_line. Se ha creado un respaldo en $destino_file.bak."
         ;;
+
     3)
         read -p "Introduzca el nombre del archivo en el que buscar la palabra: " file_to_search
         read -p "Introduzca la palabra a buscar: " word_to_search
 
-        if [ -f "$file_to_search" ]; then
-            if grep -q "$word_to_search" "$file_to_search"; then
-                echo "La palabra '$word_to_search' fue encontrada en el archivo '$file_to_search'."
-            else
-                echo "La palabra '$word_to_search' no fue encontrada en el archivo '$file_to_search'."
-            fi
+        if grep -q "$word_to_search" "$file_to_search"; then
+            echo "La palabra '$word_to_search' fue encontrada en el archivo '$file_to_search'."
         else
-            echo "El archivo '$file_to_search' no existe."
+            echo "La palabra '$word_to_search' no fue encontrada en el archivo '$file_to_search'."
         fi
         ;;
+
     4)
         read -p "Introduzca el nuevo título: " new_title
         sed -i "s/<title>.*<\/title>/<title>${new_title}<\/title>/" texto-introducir.txt
@@ -86,14 +92,14 @@ while true; do
         echo "Resultados de la búsqueda por palabra '$word_in_files' en la carpeta actual se han guardado en '$output_file'."
 
         ;;
- 9)
-    read -p "Introduzca el tipo de archivo (html/css/js): " file_type
-    read -p "Introduzca el nombre del archivo al que desea añadir comentarios: " file_to_comment
-    read -p "Introduzca el número de la primera línea para agregar el comentario: " start_line
-    read -p "Introduzca el número de la línea para finalizar el comentario: " end_line
+    9)
+        read -p "Introduzca el tipo de archivo (html/css/js): " file_type
+        read -p "Introduzca el nombre del archivo al que desea añadir comentarios: " file_to_comment
+        read -p "Introduzca el número de la primera línea para agregar el comentario: " start_line
+        read -p "Introduzca el número de la línea para finalizar el comentario: " end_line
 
-    if [ -f "$file_to_comment" ]; then
-        case "$file_type" in
+        if [ -f "$file_to_comment" ]; then
+            case "$file_type" in
             "html")
                 if [ "$end_line" -lt "$start_line" ]; then
                     echo "El número de la última línea debe ser mayor que el número de la primera línea."
@@ -124,12 +130,11 @@ while true; do
             *)
                 echo "Tipo de archivo no compatible. Use 'html', 'css' o 'js'."
                 ;;
-        esac
-    else
-        echo "El archivo $file_to_comment no existe."
-    fi
-    ;;
-
+            esac
+        else
+            echo "El archivo $file_to_comment no existe."
+        fi
+        ;;
 
     10)
         current_word=$(awk 'NR==2{match($0, /<.*>(.*)<.*/, arr); print arr[1]}' texto-sustituir-palabra.txt)
